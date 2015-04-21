@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A414A37A2D27786D0CBB894 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FD83AF62712ABE26654B0 /* SIAlertView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0F00504328D06EF29B7D1E56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F1B244ED9E307CA597A4CD /* UIKit.framework */; };
+		112880222B50EEC373E269B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EEC974F4A10FA21F7FA1BB /* Foundation.framework */; };
+		127E8671144064A6773D3911 /* CAAnimation+YALTabBarViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EC88BC98370F62927765E0 /* CAAnimation+YALTabBarViewAnimations.m */; };
+		144086529D62456AD87AE5BC /* CATransaction+TransactionWithAnimationsAndCompletion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9139468FD914E9AC885262CB /* CATransaction+TransactionWithAnimationsAndCompletion.h */; };
+		1B79D76E47FBE29C45A41AE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F13B8E0C2C9609AA1EF0EDD /* QuartzCore.framework */; };
+		1BF6467248125CACA607479C /* YALTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6D51B1B822BF4E072BAC43 /* YALTabBarItem.m */; };
+		29ADAC4FF7B69C9BB5D5A869 /* YALSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 317156D63EE3970677B9AE85 /* YALSpringAnimation.h */; };
+		2BAC010E616C381F32FE02DD /* YALTabBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = E92AB9C071C12C931284B46D /* YALTabBarItem.h */; };
+		2C8E3C64A4341A414264E6DB /* YALAnimatingTabBarConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 50620463100FE1BE2F8A4D2C /* YALAnimatingTabBarConstants.h */; };
+		38F61FD659640164E10C1A56 /* Pods-Proxi-FoldingTabBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E4AC3AE6094835164C6DC1 /* Pods-Proxi-FoldingTabBar-dummy.m */; };
+		3A842FD13877A3814CE42120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EEC974F4A10FA21F7FA1BB /* Foundation.framework */; };
+		3FF86230F4EA29838734E6E4 /* Pods-Proxi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD4ED238D2B05737CE041F /* Pods-Proxi-dummy.m */; };
+		429306DC953A919074293F02 /* YALFoldingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B9C17CA698D7BE6A72A591 /* YALFoldingTabBarController.m */; };
+		5AC259A7B57E8B4BEC1AE265 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F13B8E0C2C9609AA1EF0EDD /* QuartzCore.framework */; };
+		78457C15C5806E77E32376B6 /* SIAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 374686E6E7A2E54FB437B058 /* SIAlertView.h */; };
+		898C69A77585B53FA1E6DF3C /* Pods-Proxi-SIAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2715981A758E9D2F4EAAAA88 /* Pods-Proxi-SIAlertView-dummy.m */; };
+		8B3AF8D1BC00FD9DA0327A79 /* YALFoldingTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = B82D3BC87AF74D6A8B64EFD0 /* YALFoldingTabBarController.h */; };
+		93F037763BD3001462A1DCEF /* CAAnimation+YALTabBarViewAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B79EA02A7B01F161C0358B /* CAAnimation+YALTabBarViewAnimations.h */; };
+		AEDEECF8CEE9D26B67491B37 /* YALAnimatingTabBarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F3185EBCF460B88F970607F3 /* YALAnimatingTabBarConstants.m */; };
+		B5C6EE07B75749D711B6A6C4 /* YALTabBarInteracting.h in Headers */ = {isa = PBXBuildFile; fileRef = 4335604E0AE45E5B3CC3A2EA /* YALTabBarInteracting.h */; };
+		BD858244B9E0B98C9C327727 /* YALFoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = E5079A3C9A55679A7E385D53 /* YALFoldingTabBar.h */; };
+		C7B9CF16973DFD1F4B783D9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EEC974F4A10FA21F7FA1BB /* Foundation.framework */; };
+		CCBCE725C581CF6C84CC2270 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = C62A0A5BA59E16BA9D8B2936 /* CATransaction+TransactionWithAnimationsAndCompletion.m */; };
+		E289597DF8F524D6ACA9531F /* YALFoldingTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AADF2321A5DBA007D4DC1CE /* YALFoldingTabBar.m */; };
+		F28DF428B70C4581C97567FE /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89104965FADFD10182834AD6 /* YALSpringAnimation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07BCA2BAB8E168D1026D61AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEEC245C5641DE38163210D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77FBC9063247CC0E830BD6BE;
+			remoteInfo = "Pods-Proxi-FoldingTabBar";
+		};
+		69361D41E0C28E0CE09CE999 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEEC245C5641DE38163210D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBF52CB647692B04EA6AA952;
+			remoteInfo = "Pods-Proxi-SIAlertView";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034EAEA6F4F64AC99DE117A6 /* Pods-Proxi-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Proxi-acknowledgements.plist"; sourceTree = "<group>"; };
+		0E65FF49469BE9478CBF569C /* SIAlertView.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SIAlertView.bundle; path = SIAlertView/SIAlertView.bundle; sourceTree = "<group>"; };
+		10C88F8ED342DF7D1BF31491 /* Pods-Proxi-SIAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Proxi-SIAlertView.xcconfig"; sourceTree = "<group>"; };
+		2715981A758E9D2F4EAAAA88 /* Pods-Proxi-SIAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Proxi-SIAlertView-dummy.m"; sourceTree = "<group>"; };
+		2D70870A811D3D42EAABCBC6 /* Pods-Proxi-SIAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Proxi-SIAlertView-prefix.pch"; sourceTree = "<group>"; };
+		2F13B8E0C2C9609AA1EF0EDD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		317156D63EE3970677B9AE85 /* YALSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALSpringAnimation.h; path = FoldingTabBar/Animation/YALSpringAnimation/YALSpringAnimation.h; sourceTree = "<group>"; };
+		374686E6E7A2E54FB437B058 /* SIAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SIAlertView.h; path = SIAlertView/SIAlertView.h; sourceTree = "<group>"; };
+		376FD83AF62712ABE26654B0 /* SIAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SIAlertView.m; path = SIAlertView/SIAlertView.m; sourceTree = "<group>"; };
+		4105B3A2E0E50D70B7348AB2 /* libPods-Proxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Proxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42BD4ED238D2B05737CE041F /* Pods-Proxi-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Proxi-dummy.m"; sourceTree = "<group>"; };
+		4335604E0AE45E5B3CC3A2EA /* YALTabBarInteracting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALTabBarInteracting.h; path = FoldingTabBar/Protocol/TabBarInteracting/YALTabBarInteracting.h; sourceTree = "<group>"; };
+		443D55F590F2638C5241F556 /* Pods-Proxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Proxi.release.xcconfig"; sourceTree = "<group>"; };
+		50620463100FE1BE2F8A4D2C /* YALAnimatingTabBarConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALAnimatingTabBarConstants.h; path = FoldingTabBar/Constants/YALAnimatingTabBarConstants.h; sourceTree = "<group>"; };
+		55774B7FF81E20E2F7B22DBA /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5AADF2321A5DBA007D4DC1CE /* YALFoldingTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALFoldingTabBar.m; path = FoldingTabBar/View/FoldingTabBar/YALFoldingTabBar.m; sourceTree = "<group>"; };
+		68E4AC3AE6094835164C6DC1 /* Pods-Proxi-FoldingTabBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Proxi-FoldingTabBar-dummy.m"; sourceTree = "<group>"; };
+		7E6D51B1B822BF4E072BAC43 /* YALTabBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALTabBarItem.m; path = FoldingTabBar/Model/TabBarItem/YALTabBarItem.m; sourceTree = "<group>"; };
+		7F81C72FBDDB62601316B21E /* Pods-Proxi-FoldingTabBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Proxi-FoldingTabBar.xcconfig"; sourceTree = "<group>"; };
+		8040D958BB87CC7A4626F5F6 /* Pods-Proxi-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Proxi-environment.h"; sourceTree = "<group>"; };
+		814401BA9E302EDB0B36B38E /* Pods-Proxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Proxi.debug.xcconfig"; sourceTree = "<group>"; };
+		88331E64485CDEE68F7D9C84 /* Pods-Proxi-FoldingTabBar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Proxi-FoldingTabBar-Private.xcconfig"; sourceTree = "<group>"; };
+		88B79EA02A7B01F161C0358B /* CAAnimation+YALTabBarViewAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CAAnimation+YALTabBarViewAnimations.h"; path = "FoldingTabBar/Category/CAAnimation/CAAnimation+YALTabBarViewAnimations/CAAnimation+YALTabBarViewAnimations.h"; sourceTree = "<group>"; };
+		89104965FADFD10182834AD6 /* YALSpringAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALSpringAnimation.m; path = FoldingTabBar/Animation/YALSpringAnimation/YALSpringAnimation.m; sourceTree = "<group>"; };
+		8D5CAC7F360C8C7267728140 /* libPods-Proxi-FoldingTabBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Proxi-FoldingTabBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		912D76DFA7AD477B68F913B0 /* Pods-Proxi-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Proxi-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9139468FD914E9AC885262CB /* CATransaction+TransactionWithAnimationsAndCompletion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CATransaction+TransactionWithAnimationsAndCompletion.h"; path = "FoldingTabBar/Category/CATransaction/CATransaction+TransactionWithAnimationsAndCompletion/CATransaction+TransactionWithAnimationsAndCompletion.h"; sourceTree = "<group>"; };
+		95544F3BD731535837666E24 /* Pods-Proxi-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Proxi-resources.sh"; sourceTree = "<group>"; };
+		A3EC88BC98370F62927765E0 /* CAAnimation+YALTabBarViewAnimations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+YALTabBarViewAnimations.m"; path = "FoldingTabBar/Category/CAAnimation/CAAnimation+YALTabBarViewAnimations/CAAnimation+YALTabBarViewAnimations.m"; sourceTree = "<group>"; };
+		B82D3BC87AF74D6A8B64EFD0 /* YALFoldingTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALFoldingTabBarController.h; path = FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.h; sourceTree = "<group>"; };
+		C54F8C6D73AD77B8FD042CEF /* libPods-Proxi-SIAlertView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Proxi-SIAlertView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5F1B244ED9E307CA597A4CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C62A0A5BA59E16BA9D8B2936 /* CATransaction+TransactionWithAnimationsAndCompletion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CATransaction+TransactionWithAnimationsAndCompletion.m"; path = "FoldingTabBar/Category/CATransaction/CATransaction+TransactionWithAnimationsAndCompletion/CATransaction+TransactionWithAnimationsAndCompletion.m"; sourceTree = "<group>"; };
+		C7EEC974F4A10FA21F7FA1BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D3B9C17CA698D7BE6A72A591 /* YALFoldingTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALFoldingTabBarController.m; path = FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.m; sourceTree = "<group>"; };
+		DA9F7944689BE0CDFFF69ADD /* Pods-Proxi-FoldingTabBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Proxi-FoldingTabBar-prefix.pch"; sourceTree = "<group>"; };
+		E5079A3C9A55679A7E385D53 /* YALFoldingTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALFoldingTabBar.h; path = FoldingTabBar/View/FoldingTabBar/YALFoldingTabBar.h; sourceTree = "<group>"; };
+		E92AB9C071C12C931284B46D /* YALTabBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALTabBarItem.h; path = FoldingTabBar/Model/TabBarItem/YALTabBarItem.h; sourceTree = "<group>"; };
+		F3185EBCF460B88F970607F3 /* YALAnimatingTabBarConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALAnimatingTabBarConstants.m; path = FoldingTabBar/Constants/YALAnimatingTabBarConstants.m; sourceTree = "<group>"; };
+		F446C26422B50122C7764BCD /* Pods-Proxi-SIAlertView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Proxi-SIAlertView-Private.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FF21A6406A1F0A169921193 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7B9CF16973DFD1F4B783D9D /* Foundation.framework in Frameworks */,
+				5AC259A7B57E8B4BEC1AE265 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B5D20E430CC654A0DB21BBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A842FD13877A3814CE42120 /* Foundation.framework in Frameworks */,
+				1B79D76E47FBE29C45A41AE8 /* QuartzCore.framework in Frameworks */,
+				0F00504328D06EF29B7D1E56 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBEE52993D482536CC09FF01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112880222B50EEC373E269B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00EAF6606DF772704702CC5E /* Pods-Proxi */ = {
+			isa = PBXGroup;
+			children = (
+				912D76DFA7AD477B68F913B0 /* Pods-Proxi-acknowledgements.markdown */,
+				034EAEA6F4F64AC99DE117A6 /* Pods-Proxi-acknowledgements.plist */,
+				42BD4ED238D2B05737CE041F /* Pods-Proxi-dummy.m */,
+				8040D958BB87CC7A4626F5F6 /* Pods-Proxi-environment.h */,
+				95544F3BD731535837666E24 /* Pods-Proxi-resources.sh */,
+				814401BA9E302EDB0B36B38E /* Pods-Proxi.debug.xcconfig */,
+				443D55F590F2638C5241F556 /* Pods-Proxi.release.xcconfig */,
+			);
+			name = "Pods-Proxi";
+			path = "Target Support Files/Pods-Proxi";
+			sourceTree = "<group>";
+		};
+		2354FB72EB17E951224A70D0 = {
+			isa = PBXGroup;
+			children = (
+				55774B7FF81E20E2F7B22DBA /* Podfile */,
+				30D7BAD9BD22CF130E6CB26B /* Frameworks */,
+				BE69C6B6AB3B2DECE34E8B5D /* Pods */,
+				FDB65E8D428095DCB744C617 /* Products */,
+				A52FF6D9C76EE4E20C8A4CAB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		2B0F85135817D3EAEE9634F7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C7EEC974F4A10FA21F7FA1BB /* Foundation.framework */,
+				2F13B8E0C2C9609AA1EF0EDD /* QuartzCore.framework */,
+				C5F1B244ED9E307CA597A4CD /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		30D7BAD9BD22CF130E6CB26B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B0F85135817D3EAEE9634F7 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A8E59E5A1A4578BAB099C81 /* FoldingTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				88B79EA02A7B01F161C0358B /* CAAnimation+YALTabBarViewAnimations.h */,
+				A3EC88BC98370F62927765E0 /* CAAnimation+YALTabBarViewAnimations.m */,
+				9139468FD914E9AC885262CB /* CATransaction+TransactionWithAnimationsAndCompletion.h */,
+				C62A0A5BA59E16BA9D8B2936 /* CATransaction+TransactionWithAnimationsAndCompletion.m */,
+				50620463100FE1BE2F8A4D2C /* YALAnimatingTabBarConstants.h */,
+				F3185EBCF460B88F970607F3 /* YALAnimatingTabBarConstants.m */,
+				E5079A3C9A55679A7E385D53 /* YALFoldingTabBar.h */,
+				5AADF2321A5DBA007D4DC1CE /* YALFoldingTabBar.m */,
+				B82D3BC87AF74D6A8B64EFD0 /* YALFoldingTabBarController.h */,
+				D3B9C17CA698D7BE6A72A591 /* YALFoldingTabBarController.m */,
+				317156D63EE3970677B9AE85 /* YALSpringAnimation.h */,
+				89104965FADFD10182834AD6 /* YALSpringAnimation.m */,
+				4335604E0AE45E5B3CC3A2EA /* YALTabBarInteracting.h */,
+				E92AB9C071C12C931284B46D /* YALTabBarItem.h */,
+				7E6D51B1B822BF4E072BAC43 /* YALTabBarItem.m */,
+				B774C55A29DE38EE9D3564E0 /* Support Files */,
+			);
+			path = FoldingTabBar;
+			sourceTree = "<group>";
+		};
+		5A34D1112C5AC2EA829DCEED /* SIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				374686E6E7A2E54FB437B058 /* SIAlertView.h */,
+				376FD83AF62712ABE26654B0 /* SIAlertView.m */,
+				E49957118AC7AAAD803498F3 /* Resources */,
+				E06FA28CCC95E869C1632AAB /* Support Files */,
+			);
+			path = SIAlertView;
+			sourceTree = "<group>";
+		};
+		A52FF6D9C76EE4E20C8A4CAB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				00EAF6606DF772704702CC5E /* Pods-Proxi */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B774C55A29DE38EE9D3564E0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F81C72FBDDB62601316B21E /* Pods-Proxi-FoldingTabBar.xcconfig */,
+				88331E64485CDEE68F7D9C84 /* Pods-Proxi-FoldingTabBar-Private.xcconfig */,
+				68E4AC3AE6094835164C6DC1 /* Pods-Proxi-FoldingTabBar-dummy.m */,
+				DA9F7944689BE0CDFFF69ADD /* Pods-Proxi-FoldingTabBar-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Proxi-FoldingTabBar";
+			sourceTree = "<group>";
+		};
+		BE69C6B6AB3B2DECE34E8B5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A8E59E5A1A4578BAB099C81 /* FoldingTabBar */,
+				5A34D1112C5AC2EA829DCEED /* SIAlertView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E06FA28CCC95E869C1632AAB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10C88F8ED342DF7D1BF31491 /* Pods-Proxi-SIAlertView.xcconfig */,
+				F446C26422B50122C7764BCD /* Pods-Proxi-SIAlertView-Private.xcconfig */,
+				2715981A758E9D2F4EAAAA88 /* Pods-Proxi-SIAlertView-dummy.m */,
+				2D70870A811D3D42EAABCBC6 /* Pods-Proxi-SIAlertView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Proxi-SIAlertView";
+			sourceTree = "<group>";
+		};
+		E49957118AC7AAAD803498F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E65FF49469BE9478CBF569C /* SIAlertView.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FDB65E8D428095DCB744C617 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4105B3A2E0E50D70B7348AB2 /* libPods-Proxi.a */,
+				8D5CAC7F360C8C7267728140 /* libPods-Proxi-FoldingTabBar.a */,
+				C54F8C6D73AD77B8FD042CEF /* libPods-Proxi-SIAlertView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0BD66F880520AAC80AACF8C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F037763BD3001462A1DCEF /* CAAnimation+YALTabBarViewAnimations.h in Headers */,
+				144086529D62456AD87AE5BC /* CATransaction+TransactionWithAnimationsAndCompletion.h in Headers */,
+				2C8E3C64A4341A414264E6DB /* YALAnimatingTabBarConstants.h in Headers */,
+				BD858244B9E0B98C9C327727 /* YALFoldingTabBar.h in Headers */,
+				8B3AF8D1BC00FD9DA0327A79 /* YALFoldingTabBarController.h in Headers */,
+				29ADAC4FF7B69C9BB5D5A869 /* YALSpringAnimation.h in Headers */,
+				B5C6EE07B75749D711B6A6C4 /* YALTabBarInteracting.h in Headers */,
+				2BAC010E616C381F32FE02DD /* YALTabBarItem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6932C6EA043585E3449B2DE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78457C15C5806E77E32376B6 /* SIAlertView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6572A1B815E14A47AD01D6B3 /* Pods-Proxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5672A0AD7C29336C1AACF6FD /* Build configuration list for PBXNativeTarget "Pods-Proxi" */;
+			buildPhases = (
+				FFA062E095470D7D271DF01C /* Sources */,
+				CBEE52993D482536CC09FF01 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AE11F6C2EE110BDDB3AC80D /* PBXTargetDependency */,
+				7F922B56E8898370E5CAF3F1 /* PBXTargetDependency */,
+			);
+			name = "Pods-Proxi";
+			productName = "Pods-Proxi";
+			productReference = 4105B3A2E0E50D70B7348AB2 /* libPods-Proxi.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		77FBC9063247CC0E830BD6BE /* Pods-Proxi-FoldingTabBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA24864AB3B0526EAF1FA0DA /* Build configuration list for PBXNativeTarget "Pods-Proxi-FoldingTabBar" */;
+			buildPhases = (
+				40DBF9BB08EBFE2429D33F90 /* Sources */,
+				3B5D20E430CC654A0DB21BBD /* Frameworks */,
+				0BD66F880520AAC80AACF8C2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Proxi-FoldingTabBar";
+			productName = "Pods-Proxi-FoldingTabBar";
+			productReference = 8D5CAC7F360C8C7267728140 /* libPods-Proxi-FoldingTabBar.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DBF52CB647692B04EA6AA952 /* Pods-Proxi-SIAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9963B661E2C372B6917E86AF /* Build configuration list for PBXNativeTarget "Pods-Proxi-SIAlertView" */;
+			buildPhases = (
+				14E4283223762EC1E8E43696 /* Sources */,
+				2FF21A6406A1F0A169921193 /* Frameworks */,
+				6932C6EA043585E3449B2DE7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Proxi-SIAlertView";
+			productName = "Pods-Proxi-SIAlertView";
+			productReference = C54F8C6D73AD77B8FD042CEF /* libPods-Proxi-SIAlertView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEEC245C5641DE38163210D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = CDEE6C1A181649E790A3BE40 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2354FB72EB17E951224A70D0;
+			productRefGroup = FDB65E8D428095DCB744C617 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6572A1B815E14A47AD01D6B3 /* Pods-Proxi */,
+				77FBC9063247CC0E830BD6BE /* Pods-Proxi-FoldingTabBar */,
+				DBF52CB647692B04EA6AA952 /* Pods-Proxi-SIAlertView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14E4283223762EC1E8E43696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				898C69A77585B53FA1E6DF3C /* Pods-Proxi-SIAlertView-dummy.m in Sources */,
+				0A414A37A2D27786D0CBB894 /* SIAlertView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40DBF9BB08EBFE2429D33F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				127E8671144064A6773D3911 /* CAAnimation+YALTabBarViewAnimations.m in Sources */,
+				CCBCE725C581CF6C84CC2270 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
+				38F61FD659640164E10C1A56 /* Pods-Proxi-FoldingTabBar-dummy.m in Sources */,
+				AEDEECF8CEE9D26B67491B37 /* YALAnimatingTabBarConstants.m in Sources */,
+				E289597DF8F524D6ACA9531F /* YALFoldingTabBar.m in Sources */,
+				429306DC953A919074293F02 /* YALFoldingTabBarController.m in Sources */,
+				F28DF428B70C4581C97567FE /* YALSpringAnimation.m in Sources */,
+				1BF6467248125CACA607479C /* YALTabBarItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFA062E095470D7D271DF01C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF86230F4EA29838734E6E4 /* Pods-Proxi-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F922B56E8898370E5CAF3F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Proxi-SIAlertView";
+			target = DBF52CB647692B04EA6AA952 /* Pods-Proxi-SIAlertView */;
+			targetProxy = 69361D41E0C28E0CE09CE999 /* PBXContainerItemProxy */;
+		};
+		9AE11F6C2EE110BDDB3AC80D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Proxi-FoldingTabBar";
+			target = 77FBC9063247CC0E830BD6BE /* Pods-Proxi-FoldingTabBar */;
+			targetProxy = 07BCA2BAB8E168D1026D61AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		053EA5E41F6433697F2D6868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443D55F590F2638C5241F556 /* Pods-Proxi.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2A50EB4349B6A9AFD67B1FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3467163F1E5881C8EFB72FA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F446C26422B50122C7764BCD /* Pods-Proxi-SIAlertView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Proxi-SIAlertView/Pods-Proxi-SIAlertView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		91A43B360C2AF98B4C09E2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88331E64485CDEE68F7D9C84 /* Pods-Proxi-FoldingTabBar-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Proxi-FoldingTabBar/Pods-Proxi-FoldingTabBar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA95F69B43D4AB795FCE7086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88331E64485CDEE68F7D9C84 /* Pods-Proxi-FoldingTabBar-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Proxi-FoldingTabBar/Pods-Proxi-FoldingTabBar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B23107448C17147DE343E136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 814401BA9E302EDB0B36B38E /* Pods-Proxi.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D9AD7A9C3F346C045A86C8A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F446C26422B50122C7764BCD /* Pods-Proxi-SIAlertView-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Proxi-SIAlertView/Pods-Proxi-SIAlertView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E21C35A13C47CDF3FA5BEBAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5672A0AD7C29336C1AACF6FD /* Build configuration list for PBXNativeTarget "Pods-Proxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23107448C17147DE343E136 /* Debug */,
+				053EA5E41F6433697F2D6868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9963B661E2C372B6917E86AF /* Build configuration list for PBXNativeTarget "Pods-Proxi-SIAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3467163F1E5881C8EFB72FA3 /* Debug */,
+				D9AD7A9C3F346C045A86C8A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDEE6C1A181649E790A3BE40 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A50EB4349B6A9AFD67B1FDC /* Debug */,
+				E21C35A13C47CDF3FA5BEBAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA24864AB3B0526EAF1FA0DA /* Build configuration list for PBXNativeTarget "Pods-Proxi-FoldingTabBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A43B360C2AF98B4C09E2FA /* Debug */,
+				AA95F69B43D4AB795FCE7086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEEC245C5641DE38163210D3 /* Project object */;
+}
