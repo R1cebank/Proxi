@@ -13,5 +13,6 @@
 #import "../Pods/FoldingTabBar/FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.h"
 #import "../Pods/FoldingTabBar/FoldingTabBar/Constants/YALAnimatingTabBarConstants.h"
 #import "../Pods/SIAlertView/SIAlertView/SIAlertView.h"
+#import "../Pods/SWTableViewCell/SWTableViewCell/PodFiles/SWTableViewCell.h"
 
 #endif

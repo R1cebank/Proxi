@@ -9,7 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MPCManagerDelegate {
+class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCellDelegate, UITableViewDataSource, MPCManagerDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet weak var tableView: UITableView!
@@ -46,8 +46,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as! UITableViewCell
-        cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
+        var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as! AvaliablePeerCell
+        //Set left buttons
+        var leftButtons = NSMutableArray()
+        leftButtons.sw_addUtilityButtonWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1), icon: UIImage(named: "connect"))
+        cell.leftUtilityButtons = leftButtons as [AnyObject]
+        //Set right buttons
+        cell.peerID?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
+        cell.randomName?.text = "Mean one"
+        cell.delegate = self
+        //cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -56,10 +64,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.mpcManager.foundPeers.count
     }
+    func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerLeftUtilityButtonWithIndex index: Int) {
+        let indexPath = self.tableView.indexPathForCell(cell)
+        let selectedPeer = appDelegate.mpcManager.foundPeers[indexPath!.row] as MCPeerID
+        let peerName = appDelegate.mpcManager.foundPeers[indexPath!.row].displayName
+        switch(index) {
+        case 0:
+            let alertView = SIAlertView(title: "Invitation Sent", andMessage: "Your invitation to: \(peerName) has been sent.") as SIAlertView
+            alertView.addButtonWithTitle("OK", type: SIAlertViewButtonType.Default, handler: nil)
+            alertView.show()
+            
+            appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
+            break;
+        default:
+            break;
+        }
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedPeer = appDelegate.mpcManager.foundPeers[indexPath.row] as MCPeerID
-        
-        appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B08FB851AE6202F00ABC45B /* AvaliablePeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB841AE6202F00ABC45B /* AvaliablePeerCell.swift */; };
 		7BF998931AE5812100BCC7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998921AE5812100BCC7C1 /* AppDelegate.swift */; };
 		7BF998951AE5812100BCC7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998941AE5812100BCC7C1 /* ViewController.swift */; };
 		7BF998981AE5812100BCC7C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF998961AE5812100BCC7C1 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		732037B27A1FA80EC95A7371 /* Pods-Proxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Proxi/Pods-Proxi.debug.xcconfig"; sourceTree = "<group>"; };
+		7B08FB841AE6202F00ABC45B /* AvaliablePeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliablePeerCell.swift; sourceTree = "<group>"; };
 		7BF9988D1AE5812100BCC7C1 /* Proxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF998911AE5812100BCC7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BF998921AE5812100BCC7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				7BF998B21AE581B900BCC7C1 /* Bridge.h */,
 				7BF998B71AE5DC3500BCC7C1 /* MPCManager.swift */,
 				7BF998BF1AE5F5C500BCC7C1 /* ChatListDataCell.swift */,
+				7B08FB841AE6202F00ABC45B /* AvaliablePeerCell.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				7BF998BE1AE5F3A400BCC7C1 /* ChatViewController.swift in Sources */,
 				7BF998B61AE5D9A700BCC7C1 /* SettingViewController.swift in Sources */,
 				7BF998C01AE5F5C500BCC7C1 /* ChatListDataCell.swift in Sources */,
+				7B08FB851AE6202F00ABC45B /* AvaliablePeerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

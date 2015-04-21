@@ -7,6 +7,8 @@
     <customFonts key="customFonts">
         <mutableArray key="Code Pro LC.otf">
             <string>Code-Pro-LC</string>
+            <string>Code-Pro-LC</string>
+            <string>Code-Pro-LC</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -45,24 +47,44 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discover_bar" translatesAutoresizingMaskIntoConstraints="NO" id="o0I-Yc-xd0">
                                 <rect key="frame" x="0.0" y="20" width="320" height="60"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="avT-a8-fA8">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="avT-a8-fA8">
                                 <rect key="frame" x="0.0" y="80" width="320" height="359"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCellPeer" textLabel="wBZ-wO-V3f" style="IBUITableViewCellStyleDefault" id="lxH-Ek-kgx">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCellPeer" rowHeight="60" id="lxH-Ek-kgx" customClass="AvaliablePeerCell" customModule="Proxi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lxH-Ek-kgx" id="uTX-Fs-PTq">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lxH-Ek-kgx" id="uTX-Fs-PTq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wBZ-wO-V3f">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-Xz-a4r">
+                                                    <rect key="frame" x="8" y="8" width="304" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-qG-qqP">
+                                                    <rect key="frame" x="8" y="40" width="304" height="12"/>
+                                                    <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.40000000000000002" green="0.38823529410000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="top" secondItem="uTX-Fs-PTq" secondAttribute="topMargin" id="0GE-tX-CZ5"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" id="33T-lr-LoK"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" id="VYq-bz-sQW"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="bottom" secondItem="uTX-Fs-PTq" secondAttribute="bottomMargin" id="itR-1a-RtQ"/>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" id="m3K-0P-dHM"/>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" id="xcH-y9-cPa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="peerID" destination="xRb-qG-qqP" id="oEA-NB-rml"/>
+                                            <outlet property="randomName" destination="DOD-Xz-a4r" id="Fip-l3-svb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
