@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MultipeerConnectivity
 
 class MessageViewController : JSQMessagesViewController {
     
@@ -43,6 +44,15 @@ class MessageViewController : JSQMessagesViewController {
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         var message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text)
         self.messages += [message]
+        //Sending through session
+        let messageDictionary: [String: String] = ["message": text]
+        if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.currentSession.connectedPeers[0] as! MCPeerID){
+            println("MessageViewController : Message is sent")
+        }
+        else{
+            println("MessageViewController : Message could not send")
+        }
+        
         self.finishSendingMessageAnimated(true)
         println("MessageViewController : didPressSendButton : \(text) : \(senderId)")
     }
