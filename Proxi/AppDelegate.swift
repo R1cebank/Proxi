@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSUserDefaults.standardUserDefaults().setValue(NSUUID().UUIDString, forKey: "UUID")
         } else {
             let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
-            println("I am \(UID)")
+            println("I am \(UID!)")
         }
         mpcManager = MPCManager()
         // Override point for customization after application launch.

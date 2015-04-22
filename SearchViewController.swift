@@ -12,7 +12,10 @@ import MultipeerConnectivity
 class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCellDelegate, UITableViewDataSource, MPCManagerDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    @IBOutlet weak var visibilityIndicator: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchLabel: UILabel!
+    @IBOutlet weak var searchIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
             appDelegate.mpcManager.stopAdvertising()
         }
     }
+    override func viewDidAppear(animated: Bool) {
+        if(NSUserDefaults.standardUserDefaults().boolForKey("isVisible")) {
+            visibilityIndicator.text = "VISIBLE TO OTHERS"
+        } else {
+            visibilityIndicator.text = "NOT VISIBLE TO OTHERS"
+        }
+    }
     // MPC func
     func foundPeer() {
         tableView.reloadData()
@@ -38,10 +48,24 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
     }
     func invitationWasReceived(fromPeer: String) {
         let alertView = SIAlertView(title: "Invitation Recieved", andMessage: "\(fromPeer) want to chat with you.")
+        alertView.addButtonWithTitle("Accept", type: SIAlertViewButtonType.Default) {
+            (alertView) -> Void in
+            println("AcceptedPeer: \(fromPeer)")
+            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.newOrGetSession(fromPeer))
+        }
+        alertView.addButtonWithTitle("Decline", type: SIAlertViewButtonType.Cancel) {
+            (alertView) -> Void in
+            println("DeclinedPeer: \(fromPeer)")
+            self.appDelegate.mpcManager.invitationHandler(false, nil)
+        }
+
         alertView.show()
     }
     func connectedWithPeer(peerID: MCPeerID) {
         println("connected")
+    }
+    func acceptedCurrentInvitation(alertView: SIAlertView) {
+        
     }
     
     //UITableView
@@ -74,7 +98,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
             alertView.addButtonWithTitle("OK", type: SIAlertViewButtonType.Default, handler: nil)
             alertView.show()
             
-            appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
+            appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.newOrGetSession(peerName), withContext: nil, timeout: 20)
             break;
         default:
             break;

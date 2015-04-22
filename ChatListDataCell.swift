@@ -8,9 +8,5 @@
 
 import Foundation
 
-class ChatListDataCell: UICollectionViewCell {
-    func configureCellWithImage(image: UIImage, userIdentifier userID: NSString,
-        messageText: NSString, dateText: NSString) {
-            
-    }
+class ChatListDataCell: SWTableViewCell {
 }

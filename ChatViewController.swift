@@ -9,16 +9,21 @@
 import UIKit
 import MultipeerConnectivity
 
-class ChatViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+    override func viewDidLoad() {
+        
     }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = ChatListDataCell()
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("idChatId") as! AvaliablePeerCell
         return cell
     }
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        return CGSizeMake(CGRectGetWidth(self.view.bounds), layout.itemSize.height)
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60.0
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
     }
 }

@@ -9,6 +9,8 @@
             <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
+            <string>Code-Pro-LC</string>
+            <string>Code-Pro-LC</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -49,22 +51,54 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="avT-a8-fA8">
                                 <rect key="frame" x="0.0" y="80" width="320" height="359"/>
-                                <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.42111405759999998" green="0.4061982931" blue="0.66673954619999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="jwP-Ec-TG7">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for peers..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaU-C2-GKQ">
+                                            <rect key="frame" x="17" y="18" width="184" height="17"/>
+                                            <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VISIBLE TO OTHERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1c-FE-fR4">
+                                            <rect key="frame" x="17" y="41" width="295" height="11"/>
+                                            <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-uS-fCD">
+                                            <rect key="frame" x="270" y="25" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.42111405756665438" green="0.40619829305255911" blue="0.66673954620707065" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="f1c-FE-fR4" secondAttribute="trailing" constant="8" id="8qU-0K-AV4"/>
+                                        <constraint firstItem="f1c-FE-fR4" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="CfU-ZQ-RBS"/>
+                                        <constraint firstItem="vaU-C2-GKQ" firstAttribute="top" secondItem="jwP-Ec-TG7" secondAttribute="top" constant="18" id="L1s-6C-m1q"/>
+                                        <constraint firstAttribute="trailing" secondItem="r8G-uS-fCD" secondAttribute="trailing" constant="30" id="MLy-5f-sV1"/>
+                                        <constraint firstItem="vaU-C2-GKQ" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="OxL-7l-9Pq"/>
+                                        <constraint firstAttribute="bottom" secondItem="r8G-uS-fCD" secondAttribute="bottom" constant="25" id="Z09-UI-xhZ"/>
+                                        <constraint firstItem="r8G-uS-fCD" firstAttribute="top" secondItem="jwP-Ec-TG7" secondAttribute="top" constant="25" id="dM7-EW-Ks4"/>
+                                        <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="r8G-uS-fCD" secondAttribute="bottom" constant="-4" id="ivr-PQ-NH3"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCellPeer" rowHeight="60" id="lxH-Ek-kgx" customClass="AvaliablePeerCell" customModule="Proxi" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="idCellPeer" rowHeight="60" id="lxH-Ek-kgx" customClass="AvaliablePeerCell" customModule="Proxi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lxH-Ek-kgx" id="uTX-Fs-PTq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-Xz-a4r">
-                                                    <rect key="frame" x="8" y="8" width="304" height="17"/>
+                                                    <rect key="frame" x="16" y="8" width="304" height="17"/>
                                                     <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-qG-qqP">
-                                                    <rect key="frame" x="8" y="40" width="304" height="12"/>
+                                                    <rect key="frame" x="16" y="40" width="304" height="12"/>
                                                     <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -73,11 +107,11 @@
                                             <color key="backgroundColor" red="0.40000000000000002" green="0.38823529410000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="DOD-Xz-a4r" firstAttribute="top" secondItem="uTX-Fs-PTq" secondAttribute="topMargin" id="0GE-tX-CZ5"/>
-                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" id="33T-lr-LoK"/>
-                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" id="VYq-bz-sQW"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" constant="8" id="33T-lr-LoK"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" constant="8" id="VYq-bz-sQW"/>
                                                 <constraint firstItem="xRb-qG-qqP" firstAttribute="bottom" secondItem="uTX-Fs-PTq" secondAttribute="bottomMargin" id="itR-1a-RtQ"/>
-                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" id="m3K-0P-dHM"/>
-                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" id="xcH-y9-cPa"/>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" constant="8" id="m3K-0P-dHM"/>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" constant="8" id="xcH-y9-cPa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,7 +136,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="8so-RL-UHr"/>
                     <connections>
+                        <outlet property="searchIndicator" destination="r8G-uS-fCD" id="lGb-1q-QTF"/>
+                        <outlet property="searchLabel" destination="vaU-C2-GKQ" id="EIM-RH-oO5"/>
                         <outlet property="tableView" destination="avT-a8-fA8" id="wYc-Je-8mY"/>
+                        <outlet property="visibilityIndicator" destination="f1c-FE-fR4" id="cG3-89-tNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIx-dS-NO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -200,10 +237,28 @@
                                     <constraint firstAttribute="height" constant="60" id="q6l-8D-xnK"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ell-Ud-dg5">
+                                <rect key="frame" x="0.0" y="88" width="320" height="351"/>
+                                <color key="backgroundColor" red="0.42111405759999998" green="0.4061982931" blue="0.66673954619999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idChatId" id="2Kx-DS-7QG" customClass="ChatListDataCell" customModule="Proxi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Kx-DS-7QG" id="xh4-ZF-Afs">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ell-Ud-dg5" secondAttribute="trailing" id="4fn-wo-VCb"/>
+                            <constraint firstItem="f8d-CX-0bl" firstAttribute="top" secondItem="ell-Ud-dg5" secondAttribute="bottom" constant="80" id="J6G-xA-WSq"/>
                             <constraint firstAttribute="trailing" secondItem="ygu-Va-Zeq" secondAttribute="trailing" id="NsG-xS-MZg"/>
+                            <constraint firstItem="ell-Ud-dg5" firstAttribute="leading" secondItem="dXr-J4-uUW" secondAttribute="leading" id="ca9-I5-dQH"/>
+                            <constraint firstItem="ell-Ud-dg5" firstAttribute="top" secondItem="ygu-Va-Zeq" secondAttribute="bottom" constant="8" id="cqm-93-A4t"/>
                             <constraint firstItem="ygu-Va-Zeq" firstAttribute="leading" secondItem="dXr-J4-uUW" secondAttribute="leading" id="nnc-4Q-ISN"/>
                             <constraint firstItem="ygu-Va-Zeq" firstAttribute="top" secondItem="TIS-WZ-Zax" secondAttribute="bottom" id="zbh-WI-9Wc"/>
                         </constraints>

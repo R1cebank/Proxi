@@ -27,7 +27,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
 
     var delegate: MPCManagerDelegate?
     
-    var session: MCSession!
+    
+    var sessions = [String : MCSession]()
     
     var peer: MCPeerID!
     
@@ -49,14 +50,26 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
         isVisible = true
         
-        session = MCSession(peer: peer)
-        session.delegate = self
         
         browser = MCNearbyServiceBrowser(peer: peer, serviceType: "proxi-mpc-srv")
         browser.delegate = self
         
         advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: "proxi-mpc-srv")
         advertiser.delegate = self
+    }
+    
+    func newOrGetSession(clientID: String) -> MCSession {
+        var session: MCSession
+        if let s = sessions[clientID] {
+            println("Restoring session with: \(clientID)")
+            session = s
+        } else {
+            println("Creating a new session with: \(clientID)")
+            sessions[clientID] = MCSession(peer: peer)
+            sessions[clientID]?.delegate = self
+            session = sessions[clientID]!
+        }
+        return session
     }
     
     func startAdvertising() {
@@ -141,7 +154,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     
     // MARK: Custom method implementation
-    
+    /*
     func sendData(dictionaryWithData dictionary: Dictionary<String, String>, toPeer targetPeer: MCPeerID) -> Bool {
         let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
         let peersArray = NSArray(object: targetPeer)
@@ -153,6 +166,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
         
         return true
-    }
+    }*/
     
 }
