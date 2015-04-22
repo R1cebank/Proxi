@@ -1,15 +1,21 @@
 PODS:
   - FoldingTabBar (1.0.0)
+  - JSQMessagesViewController (7.0.1):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - SIAlertView (1.3)
   - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - FoldingTabBar (~> 1.0.0)
+  - JSQMessagesViewController
   - SIAlertView
   - SWTableViewCell (~> 0.3.7)
 
 SPEC CHECKSUMS:
   FoldingTabBar: 463d247453a2ba826ae79f5be1e6b8b93b6aa0ce
+  JSQMessagesViewController: 03fba8a3021a3ddc1c91847f180ffe549f2e8cf2
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 

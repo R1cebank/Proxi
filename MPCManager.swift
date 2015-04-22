@@ -27,6 +27,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
 
     var delegate: MPCManagerDelegate?
     
+    var currentSession: MCSession!
+    var currentPeerID   : String!
     
     var sessions = [String : MCSession]()
     
@@ -154,18 +156,18 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     
     // MARK: Custom method implementation
-    /*
+    
     func sendData(dictionaryWithData dictionary: Dictionary<String, String>, toPeer targetPeer: MCPeerID) -> Bool {
         let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
         let peersArray = NSArray(object: targetPeer)
         var error: NSError?
         
-        if !session.sendData(dataToSend, toPeers: peersArray as [AnyObject], withMode: MCSessionSendDataMode.Reliable, error: &error) {
+        if !currentSession.sendData(dataToSend, toPeers: peersArray as [AnyObject], withMode: MCSessionSendDataMode.Reliable, error: &error) {
             println(error?.localizedDescription)
             return false
         }
         
         return true
-    }*/
+    }
     
 }

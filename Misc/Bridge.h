@@ -8,11 +8,13 @@
 
 #ifndef _Bridge_h
 #define _Bridge_h
-#import "../Pods/FoldingTabBar/FoldingTabBar/Model/TabBarItem/YALTabBarItem.h"
-#import "../Pods/FoldingTabBar/FoldingTabBar/Protocol/TabBarInteracting/YALTabBarInteracting.h"
-#import "../Pods/FoldingTabBar/FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.h"
-#import "../Pods/FoldingTabBar/FoldingTabBar/Constants/YALAnimatingTabBarConstants.h"
-#import "../Pods/SIAlertView/SIAlertView/SIAlertView.h"
-#import "../Pods/SWTableViewCell/SWTableViewCell/PodFiles/SWTableViewCell.h"
+#import <FoldingTabBar/YALTabBarItem.h>
+#import <FoldingTabBar/YALTabBarInteracting.h>
+#import <FoldingTabBar/YALFoldingTabBarController.h>
+#import <FoldingTabBar/YALAnimatingTabBarConstants.h>
+#import <SIAlertView/SIAlertView.h>
+#import <SWTableViewCell/SWTableViewCell.h>
+#import <JSQMessagesViewController/JSQMessages.h>
+
 
 #endif
