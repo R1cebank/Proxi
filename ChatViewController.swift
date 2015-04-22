@@ -27,9 +27,6 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    @IBAction func unwindToSegue (segue : UIStoryboardSegue) {
-        println("ChatViewController : unwindToSegue")
-    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "idSegueChat" {
             let controller = segue.sourceViewController as! ChatViewController
@@ -40,6 +37,7 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("idChatId") as! ChatListDataCell
         cell.peerName.text = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        //Change to load last message
         cell.lastMessage.text = "Do you want to get a burger?"
         return cell
     }

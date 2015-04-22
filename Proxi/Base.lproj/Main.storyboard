@@ -221,7 +221,7 @@
             </objects>
             <point key="canvasLocation" x="-627" y="48"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Chats-->
         <scene sceneID="Dp5-Jv-tiQ">
             <objects>
                 <viewController id="Clj-Ty-Odk" customClass="ChatViewController" customModule="Proxi" customModuleProvider="target" sceneMemberID="viewController">
@@ -301,7 +301,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" id="GaZ-zg-NrK"/>
+                    <navigationItem key="navigationItem" title="Chats" id="GaZ-zg-NrK"/>
                     <connections>
                         <outlet property="tableView" destination="ell-Ud-dg5" id="PLW-CX-AYf"/>
                         <segue destination="Ta8-7i-Uhx" kind="push" identifier="idSegueChat" id="Gm4-UP-IfK"/>
@@ -338,20 +338,12 @@
                             <constraint firstItem="I4H-Hw-dJq" firstAttribute="top" secondItem="GnT-CG-7bE" secondAttribute="bottom" id="sHG-NC-wKz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kAE-AZ-xc0">
-                        <barButtonItem key="leftBarButtonItem" image="back" style="plain" id="Obu-gP-0gz">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="zgw-Of-Tfw" kind="unwind" unwindAction="unwindToSegue:" id="gWu-pD-hOh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="kAE-AZ-xc0"/>
                     <connections>
                         <outlet property="containerTitle" destination="kAE-AZ-xc0" id="dwz-jd-ztx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsW-np-QJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="zgw-Of-Tfw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="144" y="48"/>
         </scene>
@@ -365,6 +357,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="0.0"/>
@@ -401,7 +394,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="12" height="19"/>
         <image name="discover_bar" width="320" height="60"/>
         <image name="mo" width="37" height="37"/>
         <image name="nav_bar" width="320" height="60"/>

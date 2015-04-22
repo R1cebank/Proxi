@@ -15,21 +15,17 @@ class MessageViewController : JSQMessagesViewController {
     
     
     var messages = [JSQMessage]()
-    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
-    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1))
+    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 94/255, green: 91/255, blue: 149/255, alpha: 1))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.senderId = appDelegate.mpcManager.peer.displayName
         self.senderDisplayName = "miku"
-        self.inputToolbar.preferredDefaultHeight = 100
+        self.inputToolbar.contentView.leftBarButtonItem = nil
+        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
+        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         // Do any additional setup after loading the view, typically from a nib.
-        for i in 1...10 {
-            var sender = (i%2 == 0) ? "Syncano" : self.senderDisplayName
-            var message = JSQMessage(senderId: sender, displayName: sender, text: "Text")
-            self.messages += [message]
-        }
-        self.collectionView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,6 +40,12 @@ class MessageViewController : JSQMessagesViewController {
     
     
     //Message handling part
+    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+        var message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text)
+        self.messages += [message]
+        self.finishSendingMessageAnimated(true)
+        println("MessageViewController : didPressSendButton : \(text) : \(senderId)")
+    }
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         var data = self.messages[indexPath.row]
         return data
