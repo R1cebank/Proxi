@@ -388,7 +388,7 @@
                         <viewControllerLayoutGuide type="top" id="n4Z-ww-Zh3"/>
                         <viewControllerLayoutGuide type="bottom" id="Urg-My-iRE"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DBH-VW-vva">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" id="DBH-VW-vva">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

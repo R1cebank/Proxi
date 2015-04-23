@@ -67,9 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         let dataDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, String>
         if let message = dataDictionary["message"] {
             println("Appdelegate : handleMPC : \(message) : from : \(fromPeer.displayName)")
+            //Archive
+            /*
             let archive = chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
-            archive.addObject(chatMessage)
+            archive.addObject(chatMessage)*/
         }
         if let name = dataDictionary["name"] {
             println("Appdelegate : change name of target to \(name)")

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "862F974703AC8316D779BA60"
+               BlueprintIdentifier = "D61501529365B414749135FA"
                BuildableName = "libPods-Proxi-SIAlertView.a"
                BlueprintName = "Pods-Proxi-SIAlertView"
                ReferencedContainer = "container:Pods.xcodeproj">
