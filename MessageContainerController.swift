@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Siyuan Gao. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class MessageContainerController : UIViewController {
@@ -20,7 +21,7 @@ class MessageContainerController : UIViewController {
     }
     override func viewDidAppear(animated: Bool) {
         println("MessageContainerController : willappear")
-        containerTitle.title = appDelegate.mpcManager.currentPeerID
+        containerTitle.title = appDelegate.mpcManager.currentPeerHandle
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     

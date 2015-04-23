@@ -20,6 +20,7 @@ protocol MPCManagerDelegate {
     func invitationWasReceived(fromPeer: String)
     
     func connectedWithPeer(peerID: MCPeerID)
+    
 }
 
 
@@ -27,8 +28,13 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
 
     var delegate: MPCManagerDelegate?
     
+    var handle: String!
+    
     var currentSession: MCSession!
     var currentPeerID   : String!
+    var currentPeerHandle   : String!
+    
+    var idName = [String : String]()
     
     var sessions = [String : MCSession]()
     
@@ -88,7 +94,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
         foundPeers.append(peerID)
-        
+        idName[peerID.displayName] = peerID.displayName
+
         delegate?.foundPeer()
     }
     
@@ -129,7 +136,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
         switch state{
         case MCSessionState.Connected:
+            currentSession = session
             println("Connected to session: \(session)")
+            let messageDictionary: [String: String] = ["name": handle]
+            sendData(dictionaryWithData: messageDictionary, toPeer: peerID)
             delegate?.connectedWithPeer(peerID)
             
         case MCSessionState.Connecting:
@@ -142,7 +152,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
-        let dictionary: [String: AnyObject] = ["data": data, "fromPeer": peerID]
+        let dictionary: [String: AnyObject] = ["data": data, "fromPeer": peerID, "session": session]
+        println("MPCManager : recieved message")
         NSNotificationCenter.defaultCenter().postNotificationName("receivedMPCDataNotification", object: dictionary)
     }
     

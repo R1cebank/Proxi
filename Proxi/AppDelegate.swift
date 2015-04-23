@@ -7,24 +7,33 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
 
     var window: UIWindow?
     var mpcManager: MPCManager!
+    var chatManager: ChatManager!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //Defaults
+        if(NSUserDefaults.standardUserDefaults().stringForKey("handle") == nil) {
+            NSUserDefaults.standardUserDefaults().setValue("Miku", forKey: "handle")
+        }
         if((NSUserDefaults.standardUserDefaults().stringForKey("UUID")) == nil) {
             NSUserDefaults.standardUserDefaults().setValue(NSUUID().UUIDString, forKey: "UUID")
-        } else {
-            let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
-            println("I am \(UID!)")
         }
         mpcManager = MPCManager()
+        chatManager = ChatManager(manager: mpcManager)
+        chatManager.delegate = self
+        mpcManager.handle = NSUserDefaults.standardUserDefaults().stringForKey("handle")
+        let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
+        println("I am \(UID!)")
+        println("My handle is \(mpcManager.handle)")
         // Override point for customization after application launch.
+        NSNotificationCenter.defaultCenter().addObserver(chatManager, selector: "handleMPCReceivedDataWithNotification:", name: "receivedMPCDataNotification", object: nil)
         setupTabBarController()
         return true
     }
@@ -34,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let item1:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "nearby_icon"), leftItemImage: nil, rightItemImage: nil)
         let item2:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "profile_icon"), leftItemImage: UIImage(named: "edit_icon"), rightItemImage: nil)
         tabBarController.leftBarItems = [item1, item2]
-        let item3 = YALTabBarItem(itemImage: UIImage(named: "new_chat_icon"), leftItemImage: UIImage(named: "search_icon"), rightItemImage: UIImage(named: "new_chat_icon"))
+        let item3 = YALTabBarItem(itemImage: UIImage(named: "new_chat_icon"), leftItemImage: UIImage(named: "reload_icon"), rightItemImage: UIImage(named: "new_chat_icon"))
         let item4 = YALTabBarItem(itemImage: UIImage(named: "settings_icon"), leftItemImage: nil, rightItemImage: nil)
         tabBarController.rightBarItems = [item3, item4]
         tabBarController.centerButtonImage = UIImage(named: "tele")
@@ -46,6 +55,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBarViewHeight = YALTabBarViewDefaultHeight
         tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets
         tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets
+    }
+    
+    func gotMessage(receivedDataDictionary: Dictionary<String, AnyObject>) {
+        //Got a message
+        println("Appdelegate : gotMessage")
+        let data = receivedDataDictionary["data"] as? NSData
+        let fromPeer = receivedDataDictionary["fromPeer"] as! MCPeerID
+        let session = receivedDataDictionary["session"] as! MCSession
+        // Convert the data (NSData) into a Dictionary object.
+        let dataDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, String>
+        if let message = dataDictionary["message"] {
+            println("Appdelegate : handleMPC : \(message) : from : \(fromPeer.displayName)")
+            let archive = chatManager.newOrGetArchive(fromPeer.displayName)
+            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
+            archive.addObject(chatMessage)
+        }
+        if let name = dataDictionary["name"] {
+            println("Appdelegate : change name of target to \(name)")
+            mpcManager.idName[fromPeer.displayName] = name
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

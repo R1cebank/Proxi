@@ -9,7 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, ChatManagerDelegate, YALTabBarInteracting {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,7 +25,11 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         tableView.reloadData()
         super.viewDidAppear(animated)
+        appDelegate.chatManager.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        appDelegate.chatManager.delegate = appDelegate
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "idSegueChat" {
@@ -34,9 +38,15 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
             println("ChatViewController : prepareForSegue")
         }
     }
+    func gotMessage(receivedDataDictionary: Dictionary<String, AnyObject>) {
+        //Got a message
+        println("ChatViewController : gotMessage")
+    }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("idChatId") as! ChatListDataCell
-        cell.peerName.text = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        cell.peerID.text = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        cell.peerName.text = appDelegate.mpcManager.idName[id]
         //Change to load last message
         cell.lastMessage.text = "Do you want to get a burger?"
         return cell
@@ -47,8 +57,15 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ChatListDataCell
-        appDelegate.mpcManager.currentPeerID = cell.peerName.text
-        appDelegate.mpcManager.currentSession = appDelegate.mpcManager.sessions[cell.peerName.text!]
+        appDelegate.mpcManager.currentPeerHandle = cell.peerName.text
+        appDelegate.mpcManager.currentPeerID = cell.peerID.text
+        appDelegate.mpcManager.currentSession = appDelegate.mpcManager.sessions[cell.peerID.text!]
         self.performSegueWithIdentifier("idSegueChat", sender: self)
     }
+    //YAL Bar interacting
+    func extraLeftItemDidPressed() {
+        println("ChatViewController : extraleftPressed")
+        tableView.reloadData()
+    }
+    
 }
