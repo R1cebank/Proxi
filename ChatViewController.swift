@@ -41,14 +41,59 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
     func gotMessage(receivedDataDictionary: Dictionary<String, AnyObject>) {
         //Got a message
         println("ChatViewController : gotMessage")
+        let data = receivedDataDictionary["data"] as? NSData
+        let fromPeer = receivedDataDictionary["fromPeer"] as! MCPeerID
+        let session = receivedDataDictionary["session"] as! MCSession
+        // Convert the data (NSData) into a Dictionary object.
+        let dataDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, String>
+        if let message = dataDictionary["message"] {
+            println("Appdelegate : handleMPC : \(message) : from : \(fromPeer.displayName)")
+            //Archive
+            
+            let archive = appDelegate.chatManager.newOrGetArchive(fromPeer.displayName)
+            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
+            archive.addObject(chatMessage)
+            var unreadCount = appDelegate.chatManager.newOrGetUnread(fromPeer.displayName)
+            if(unreadCount != -1) {
+                appDelegate.chatManager.unreadFrom[fromPeer.displayName] = unreadCount + 1
+            } else {
+                appDelegate.chatManager.unreadFrom[fromPeer.displayName] = 1
+            }
+            
+        }
+        if let name = dataDictionary["name"] {
+            println("Appdelegate : change name of target to \(name)")
+            appDelegate.mpcManager.idName[fromPeer.displayName] = name
+        }
+        dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()})
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("idChatId") as! ChatListDataCell
         var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
-        cell.peerID.text = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        cell.peerID.text = id
         cell.peerName.text = appDelegate.mpcManager.idName[id]
+        //cell.userImage = UIImageView(image: UIImage(named: "mo"))
         //Change to load last message
-        cell.lastMessage.text = "Do you want to get a burger?"
+        var messageList = appDelegate.chatManager.newOrGetArchive(id)
+        var unreadCount = appDelegate.chatManager.newOrGetUnread(id)
+        if(unreadCount <= -1) {
+            println("ChatViewController : resetting badge")
+            cell.userImage = UIImageView(image: UIImage(named: "mo"))
+        } else {
+            let hub = RKNotificationHub(view: cell.userImage)
+            hub.scaleCircleSizeBy(0.7)
+            hub.setCount(unreadCount)
+            hub.pop()
+        }
+        println("Setting \(unreadCount)")
+        if(messageList.count == 0) {
+            cell.lastMessage.text = "[no message]"
+        } else {
+            if let msg = messageList.lastObject as? ChatMessage {
+                cell.lastMessage.text = msg.message
+            }
+        }
+        //cell.lastMessage.text = "Do you want to get a burger?"
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

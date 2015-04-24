@@ -6,6 +6,7 @@ pod 'FoldingTabBar', '~> 1.0.0'
 pod 'SIAlertView'
 pod 'SWTableViewCell', '~> 0.3.7'
 pod 'JSQMessagesViewController'
+pod 'RKNotificationHub'
 
 end
 

@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Proxi-RKNotificationHub.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Proxi-SIAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15FDE1DCC00929B089B8E94B</key>
+		<key>19D6A6C77CC7312AB5C1A090</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>474B09F7B1239556D855FBA2</key>
+		<key>1A82EECF97982E6A500F50D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D7080368F414CD59D06597E</key>
+		<key>59018223EB36CC70E32A2E04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8A6C5F407799753E833145C</key>
+		<key>7BA6200D599901D7B9E7D27E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C561F085790715B56E1B30D6</key>
+		<key>B04C6B65BE1BEDF9190887E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D61501529365B414749135FA</key>
+		<key>B08ECE63C4925A05E47E52B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4D46970760A8A306B1FAA01</key>
 		<dict>
 			<key>primary</key>
 			<true/>

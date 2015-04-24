@@ -36,14 +36,16 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
     }
     override func viewWillAppear(animated: Bool) {
         //Restore chat message
-        /*var messageList = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
+        var messageList = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
         for message in messageList{
             let message = message as! ChatMessage
+            println("MesssageViewController : restoring \(message.message!) from: \(message.sender) name: \(appDelegate.mpcManager.idName[message.sender])")
             var msg = JSQMessage(senderId: message.sender, displayName: appDelegate.mpcManager.idName[message.sender], text: message.message)
             messages += [msg]
-            println("MesssageViewController : restoring \(message.message!)")
         }
-        self.collectionView.reloadData()*/
+        appDelegate.chatManager.unreadFrom[appDelegate.mpcManager.currentPeerID] = -1
+        println("Resetting unreadCount from \(appDelegate.mpcManager.currentPeerID)")
+        self.collectionView.reloadData()
         //Restore delegate
         appDelegate.chatManager.delegate = self
     }
@@ -67,11 +69,11 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         if let message = dataDictionary["message"] {
             println("MessageViewController : handleMPC : \(message) : from : \(fromPeer.displayName)")
             //Archive
-            /*
+            
             let archive = appDelegate.chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
-            */
+            
             var msg = JSQMessage(senderId: fromPeer.displayName, displayName: appDelegate.mpcManager.idName[fromPeer.displayName], text: message)
             messages += [msg]
             println("MessageViewController : added message : \(message) from: \(fromPeer.displayName)")
@@ -81,7 +83,8 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             appDelegate.mpcManager.idName[fromPeer.displayName] = name
             self.parentViewController?.title = name
         }
-        self.finishReceivingMessageAnimated(true)
+        dispatch_async(dispatch_get_main_queue(), {self.finishReceivingMessageAnimated(true)})
+        //self.finishReceivingMessageAnimated(true)
     }
     
     //Message handling part
@@ -97,10 +100,10 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             println("MessageViewController : Message could not send")
         }
         //Archive
-        /*
+        
         let archive = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
         let chatMessage = ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text)
-        archive.addObject(chatMessage)*/
+        archive.addObject(chatMessage)
         
         self.finishSendingMessageAnimated(true)
         println("MessageViewController : didPressSendButton : \(text) : \(senderId)")

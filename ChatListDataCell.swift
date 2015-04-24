@@ -13,4 +13,5 @@ class ChatListDataCell: SWTableViewCell {
     @IBOutlet weak var peerName: UILabel!
     @IBOutlet weak var lastMessage: UILabel!
     @IBOutlet weak var peerID: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
 }

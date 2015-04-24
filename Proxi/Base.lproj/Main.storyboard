@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SCw-gI-OMR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SCw-gI-OMR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Code Pro LC.otf">
+            <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
@@ -19,7 +20,7 @@
         <!--Item 2-->
         <scene sceneID="ROD-OC-ORS">
             <objects>
-                <viewController id="6Dm-47-IrE" sceneMemberID="viewController">
+                <viewController id="6Dm-47-IrE" customClass="ProfileViewController" customModule="Proxi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3x6-LW-2eL"/>
                         <viewControllerLayoutGuide type="bottom" id="FXM-Iu-Dje"/>
@@ -27,10 +28,43 @@
                     <view key="view" contentMode="scaleToFill" id="NB4-vH-612">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile bar" translatesAutoresizingMaskIntoConstraints="NO" id="JKC-0j-47B">
+                                <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Kiz-AD-yRI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILE SETTINGS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu0-YH-gqr">
+                                <rect key="frame" x="16" y="105" width="288" height="12"/>
+                                <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-ph-z2B">
+                                <rect key="frame" x="16" y="131" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JKC-0j-47B" firstAttribute="leading" secondItem="NB4-vH-612" secondAttribute="leading" id="6vb-te-0gA"/>
+                            <constraint firstItem="wYI-ph-z2B" firstAttribute="trailing" secondItem="NB4-vH-612" secondAttribute="trailingMargin" id="7JD-Tj-poH"/>
+                            <constraint firstItem="JKC-0j-47B" firstAttribute="top" secondItem="3x6-LW-2eL" secondAttribute="bottom" id="FiA-G0-cy6"/>
+                            <constraint firstItem="Zu0-YH-gqr" firstAttribute="top" secondItem="JKC-0j-47B" secondAttribute="bottom" constant="25" id="Oed-8v-JOy"/>
+                            <constraint firstItem="Zu0-YH-gqr" firstAttribute="leading" secondItem="NB4-vH-612" secondAttribute="leadingMargin" id="Xlf-0N-EB7"/>
+                            <constraint firstItem="Zu0-YH-gqr" firstAttribute="trailing" secondItem="NB4-vH-612" secondAttribute="trailingMargin" id="YFf-0g-jCO"/>
+                            <constraint firstItem="wYI-ph-z2B" firstAttribute="top" secondItem="Zu0-YH-gqr" secondAttribute="bottom" constant="14" id="bFc-vJ-ODh"/>
+                            <constraint firstAttribute="trailing" secondItem="JKC-0j-47B" secondAttribute="trailing" id="oL7-RT-Apt"/>
+                            <constraint firstItem="wYI-ph-z2B" firstAttribute="leading" secondItem="NB4-vH-612" secondAttribute="leadingMargin" id="zTg-M0-SC7"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item 2" id="CtB-X1-9Wz"/>
+                    <connections>
+                        <outlet property="nickname" destination="wYI-ph-z2B" id="rtm-oM-Iar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTN-GS-e6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,7 +304,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45d-56-lNy">
                                                     <rect key="frame" x="82" y="47" width="42" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -291,6 +325,7 @@
                                             <outlet property="lastMessage" destination="YgL-qQ-Af5" id="7AN-xs-kTf"/>
                                             <outlet property="peerID" destination="45d-56-lNy" id="mnV-Et-2Q0"/>
                                             <outlet property="peerName" destination="k7F-aI-a3s" id="IP0-hS-xTv"/>
+                                            <outlet property="userImage" destination="f6m-Bo-HRh" id="UgE-fo-on8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -333,7 +368,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4H-Hw-dJq">
                                 <rect key="frame" x="0.0" y="64" width="320" height="375"/>
                                 <connections>
-                                    <segue destination="XgY-Zi-iDX" kind="embed" id="J9V-Zq-VHF"/>
+                                    <segue destination="XgY-Zi-iDX" kind="embed" identifier="messageEmbedSegue" id="J9V-Zq-VHF"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -404,6 +439,7 @@
         <image name="discover_bar" width="320" height="60"/>
         <image name="mo" width="37" height="37"/>
         <image name="nav_bar" width="320" height="60"/>
+        <image name="profile bar" width="320" height="60"/>
         <image name="setting_bar" width="320" height="60"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

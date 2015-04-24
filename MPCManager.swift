@@ -94,6 +94,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
         foundPeers.append(peerID)
+        if(sessions[peerID.displayName] != nil) {
+            println("Recent peer is range, trying to reconnect (\(peerID.displayName))...")
+            browser.invitePeer(peerID, toSession: newOrGetSession(peerID.displayName), withContext: nil, timeout: 20)
+        }
         idName[peerID.displayName] = peerID.displayName
 
         delegate?.foundPeer()

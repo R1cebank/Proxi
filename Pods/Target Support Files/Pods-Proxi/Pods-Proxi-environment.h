@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_JSQSystemSoundPlayer 0
 #define COCOAPODS_VERSION_PATCH_JSQSystemSoundPlayer 1
 
+// RKNotificationHub
+#define COCOAPODS_POD_AVAILABLE_RKNotificationHub
+#define COCOAPODS_VERSION_MAJOR_RKNotificationHub 1
+#define COCOAPODS_VERSION_MINOR_RKNotificationHub 0
+#define COCOAPODS_VERSION_PATCH_RKNotificationHub 5
+
 // SIAlertView
 #define COCOAPODS_POD_AVAILABLE_SIAlertView
 #define COCOAPODS_VERSION_MAJOR_SIAlertView 1

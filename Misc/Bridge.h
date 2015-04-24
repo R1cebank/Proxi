@@ -15,6 +15,6 @@
 #import <SIAlertView/SIAlertView.h>
 #import <SWTableViewCell/SWTableViewCell.h>
 #import <JSQMessagesViewController/JSQMessages.h>
-
+#import <RKNotificationHub/RKNotificationHub.h>
 
 #endif

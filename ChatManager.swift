@@ -20,10 +20,24 @@ class ChatManager: NSObject {
     var mpcManager: MPCManager!
     var currentSession: MCSession!
     var messageArchive = [String:NSMutableArray]()
+    var unreadFrom = [String:Int32]()
     
     init(manager: MPCManager) {
         super.init()
         mpcManager = manager
+    }
+    func newOrGetUnread(clientID: String) -> Int32 {
+        var count: Int32 = -1
+        
+        if let a = unreadFrom[clientID] {
+            println("Restoring unreadCount with: \(clientID)")
+            count = a
+        } else {
+            println("Creating a new unreadCount with: \(clientID)")
+            unreadFrom[clientID] = count
+        }
+        
+        return count
     }
     func newOrGetArchive(clientID: String) -> NSMutableArray {
         var archive = NSMutableArray()

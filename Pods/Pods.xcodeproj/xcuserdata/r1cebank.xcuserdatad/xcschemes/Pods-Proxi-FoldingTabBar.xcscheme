@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D7080368F414CD59D06597E"
+               BlueprintIdentifier = "7BA6200D599901D7B9E7D27E"
                BuildableName = "libPods-Proxi-FoldingTabBar.a"
                BlueprintName = "Pods-Proxi-FoldingTabBar"
                ReferencedContainer = "container:Pods.xcodeproj">

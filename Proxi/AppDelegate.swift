@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         chatManager = ChatManager(manager: mpcManager)
         chatManager.delegate = self
         mpcManager.handle = NSUserDefaults.standardUserDefaults().stringForKey("handle")
+        mpcManager.idName[mpcManager.peer.displayName] = mpcManager.handle
         let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
         println("I am \(UID!)")
         println("My handle is \(mpcManager.handle)")
@@ -68,10 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         if let message = dataDictionary["message"] {
             println("Appdelegate : handleMPC : \(message) : from : \(fromPeer.displayName)")
             //Archive
-            /*
+            
             let archive = chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
-            archive.addObject(chatMessage)*/
+            archive.addObject(chatMessage)
         }
         if let name = dataDictionary["name"] {
             println("Appdelegate : change name of target to \(name)")
