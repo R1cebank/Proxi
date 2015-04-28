@@ -34,7 +34,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var currentPeerID   : String!
     var currentPeerHandle   : String!
     
-    var idName = [String : String]()
     
     var sessions = [String : MCSession]()
     
@@ -51,10 +50,16 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var isVisible: Bool!
     
     
-    override init() {
+    init(hdl: String) {
         super.init()
         
-        peer = MCPeerID(displayName: NSUserDefaults.standardUserDefaults().stringForKey("UUID"))
+        handle = hdl
+        
+        var signature = NSUserDefaults.standardUserDefaults().stringForKey("UUID")!
+        signature += "$\(handle)"
+        println(signature)
+        
+        peer = MCPeerID(displayName: signature)
         
         isVisible = true
         
@@ -64,6 +69,22 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
         advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: "proxi-mpc-srv")
         advertiser.delegate = self
+    }
+    func getDisplayName(peer: MCPeerID) -> String {
+        var data = peer.displayName.componentsSeparatedByString("$")
+        return data[0]
+    }
+    func getDisplayNameFromID(peer: String) -> String {
+        var data = peer.componentsSeparatedByString("$")
+        return data[0]
+    }
+    func getHandle(peer: MCPeerID) -> String {
+        var data = peer.displayName.componentsSeparatedByString("$")
+        return data[1]
+    }
+    func getHandleFromID(peer: String) -> String {
+        var data = peer.componentsSeparatedByString("$")
+        return data[1]
     }
     
     func newOrGetSession(clientID: String) -> MCSession {
@@ -98,7 +119,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             println("Recent peer is range, trying to reconnect (\(peerID.displayName))...")
             browser.invitePeer(peerID, toSession: newOrGetSession(peerID.displayName), withContext: nil, timeout: 20)
         }
-        idName[peerID.displayName] = peerID.displayName
 
         delegate?.foundPeer()
     }
@@ -125,8 +145,11 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
         self.invitationHandler = invitationHandler
-        
-        delegate?.invitationWasReceived(peerID.displayName)
+        if(sessions[peerID.displayName] != nil) {
+            self.invitationHandler(true, self.newOrGetSession(peerID.displayName))
+        } else {
+            delegate?.invitationWasReceived(peerID.displayName)
+        }
     }
     
     
@@ -142,8 +165,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         case MCSessionState.Connected:
             currentSession = session
             println("Connected to session: \(session)")
-            let messageDictionary: [String: String] = ["name": handle]
-            sendData(dictionaryWithData: messageDictionary, toPeer: peerID)
             delegate?.connectedWithPeer(peerID)
             
         case MCSessionState.Connecting:

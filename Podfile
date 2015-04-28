@@ -7,6 +7,8 @@ pod 'SIAlertView'
 pod 'SWTableViewCell', '~> 0.3.7'
 pod 'JSQMessagesViewController'
 pod 'RKNotificationHub'
+pod 'JDStatusBarNotification'
+pod 'AMPopTip'
 
 end
 

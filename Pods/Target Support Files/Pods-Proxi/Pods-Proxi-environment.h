@@ -6,11 +6,23 @@
 // project.
 
 
+// AMPopTip
+#define COCOAPODS_POD_AVAILABLE_AMPopTip
+#define COCOAPODS_VERSION_MAJOR_AMPopTip 0
+#define COCOAPODS_VERSION_MINOR_AMPopTip 7
+#define COCOAPODS_VERSION_PATCH_AMPopTip 1
+
 // FoldingTabBar
 #define COCOAPODS_POD_AVAILABLE_FoldingTabBar
 #define COCOAPODS_VERSION_MAJOR_FoldingTabBar 1
 #define COCOAPODS_VERSION_MINOR_FoldingTabBar 0
 #define COCOAPODS_VERSION_PATCH_FoldingTabBar 0
+
+// JDStatusBarNotification
+#define COCOAPODS_POD_AVAILABLE_JDStatusBarNotification
+#define COCOAPODS_VERSION_MAJOR_JDStatusBarNotification 1
+#define COCOAPODS_VERSION_MINOR_JDStatusBarNotification 5
+#define COCOAPODS_VERSION_PATCH_JDStatusBarNotification 2
 
 // JSQMessagesViewController
 #define COCOAPODS_POD_AVAILABLE_JSQMessagesViewController

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MultipeerConnectivity
 
+
 class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -39,8 +40,8 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         var messageList = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
         for message in messageList{
             let message = message as! ChatMessage
-            println("MesssageViewController : restoring \(message.message!) from: \(message.sender) name: \(appDelegate.mpcManager.idName[message.sender])")
-            var msg = JSQMessage(senderId: message.sender, displayName: appDelegate.mpcManager.idName[message.sender], text: message.message)
+            println("MesssageViewController : restoring \(message.message!) from: \(appDelegate.mpcManager.getDisplayNameFromID(message.sender)) name: \(appDelegate.mpcManager.getHandleFromID(message.sender))")
+            var msg = JSQMessage(senderId: message.sender, displayName: appDelegate.mpcManager.getDisplayNameFromID(message.sender), text: message.message)
             messages += [msg]
         }
         appDelegate.chatManager.unreadFrom[appDelegate.mpcManager.currentPeerID] = -1
@@ -74,14 +75,9 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
             
-            var msg = JSQMessage(senderId: fromPeer.displayName, displayName: appDelegate.mpcManager.idName[fromPeer.displayName], text: message)
+            var msg = JSQMessage(senderId: appDelegate.mpcManager.getDisplayName(fromPeer), displayName: appDelegate.mpcManager.getHandle(fromPeer), text: message)
             messages += [msg]
             println("MessageViewController : added message : \(message) from: \(fromPeer.displayName)")
-        }
-        if let name = dataDictionary["name"] {
-            println("Appdelegate : change name of target to \(name)")
-            appDelegate.mpcManager.idName[fromPeer.displayName] = name
-            self.parentViewController?.title = name
         }
         dispatch_async(dispatch_get_main_queue(), {self.finishReceivingMessageAnimated(true)})
         //self.finishReceivingMessageAnimated(true)

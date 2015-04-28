@@ -45,6 +45,10 @@
                                 <rect key="frame" x="16" y="131" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="buttonTouched:" destination="6Dm-47-IrE" eventType="editingDidBegin" id="BtM-gj-nDI"/>
+                                    <action selector="editingEnded:" destination="6Dm-47-IrE" eventType="editingDidEnd" id="D27-EE-bIa"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>

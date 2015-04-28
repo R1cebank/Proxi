@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController : UIViewController, UITextFieldDelegate, YALTabBarInteracting {
+class ProfileViewController : UIViewController, UITextFieldDelegate {
     
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -27,6 +27,19 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, YALTabBarIn
     override func viewDidAppear(animated: Bool) {
     }
     
+    @IBAction func editingEnded(sender: AnyObject) {
+        println("ProfileViewContoller : editing ended")
+        println("ProfileViewController : Modifying")
+        println("ProfileViewController : nickname : \(nickname.text)")
+        NSUserDefaults.standardUserDefaults().setValue(nickname.text, forKey: "handle")
+        appDelegate.mpcManager.handle = nickname.text
+    }
+    @IBAction func buttonTouched(sender: AnyObject) {
+        var tip = AMPopTip()
+        tip.popoverColor = UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1)
+        tip.showText("edit your name here and touch anywhere to save", direction: AMPopTipDirection.Down, maxWidth: 200, inView: self.view, fromFrame: nickname.frame)
+        println("touched")
+    }
     override func viewWillAppear(animated: Bool) {
         nickname.text = NSUserDefaults.standardUserDefaults().stringForKey("handle")
     }
@@ -45,11 +58,5 @@ class ProfileViewController : UIViewController, UITextFieldDelegate, YALTabBarIn
         dismissKeyboard()
         return true
     }
-    func extraLeftItemDidPressed() {
-        println("ProfileViewController : Modifying")
-        println("ProfileViewController : nickname : \(nickname.text)")
-        NSUserDefaults.standardUserDefaults().setValue(nickname.text, forKey: "handle")
-        appDelegate.mpcManager.handle = nickname.text
-        appDelegate.mpcManager.idName[appDelegate.mpcManager.peer.displayName] = nickname.text
-    }
+
 }

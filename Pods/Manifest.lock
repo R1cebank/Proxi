@@ -1,5 +1,7 @@
 PODS:
+  - AMPopTip (0.7.1)
   - FoldingTabBar (1.0.0)
+  - JDStatusBarNotification (1.5.2)
   - JSQMessagesViewController (7.0.1):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -8,14 +10,18 @@ PODS:
   - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
+  - AMPopTip
   - FoldingTabBar (~> 1.0.0)
+  - JDStatusBarNotification
   - JSQMessagesViewController
   - RKNotificationHub
   - SIAlertView
   - SWTableViewCell (~> 0.3.7)
 
 SPEC CHECKSUMS:
+  AMPopTip: 5a78abc067fe3e2fb5d3980072ffae51c8c4f6c5
   FoldingTabBar: 463d247453a2ba826ae79f5be1e6b8b93b6aa0ce
+  JDStatusBarNotification: a36d09ccbb047217572b074a61e7ca10dddc5f0a
   JSQMessagesViewController: 03fba8a3021a3ddc1c91847f180ffe549f2e8cf2
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   RKNotificationHub: 529ee3c92564738d3e489057968bfbc4ffd3e942

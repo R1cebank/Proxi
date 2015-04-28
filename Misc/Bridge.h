@@ -16,5 +16,7 @@
 #import <SWTableViewCell/SWTableViewCell.h>
 #import <JSQMessagesViewController/JSQMessages.h>
 #import <RKNotificationHub/RKNotificationHub.h>
+#import <JDStatusBarNotification/JDStatusBarNotification.h>
+#import <AMPopTip/AMPopTip.h>
 
 #endif

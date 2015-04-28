@@ -61,24 +61,24 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
             }
             
         }
-        if let name = dataDictionary["name"] {
-            println("Appdelegate : change name of target to \(name)")
-            appDelegate.mpcManager.idName[fromPeer.displayName] = name
-        }
-        dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()})
+        //JDStatusBarNotification.showWithStatus("message from \(appDelegate.mpcManager.idName[fromPeer.displayName])", dismissAfter: NSTimeInterval(2))
+        dispatch_async(dispatch_get_main_queue(), {
+            JDStatusBarNotification.showWithStatus("message from \(self.appDelegate.mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
+            self.tableView.reloadData()
+        })
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("idChatId") as! ChatListDataCell
         var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
         cell.peerID.text = id
-        cell.peerName.text = appDelegate.mpcManager.idName[id]
+        cell.peerName.text = appDelegate.mpcManager.getHandleFromID(id)
         //cell.userImage = UIImageView(image: UIImage(named: "mo"))
         //Change to load last message
         var messageList = appDelegate.chatManager.newOrGetArchive(id)
         var unreadCount = appDelegate.chatManager.newOrGetUnread(id)
         if(unreadCount <= -1) {
             println("ChatViewController : resetting badge")
-            cell.userImage = UIImageView(image: UIImage(named: "mo"))
+            //cell.userImage = UIImageView(image: UIImage(named: "mo"))
         } else {
             let hub = RKNotificationHub(view: cell.userImage)
             hub.scaleCircleSizeBy(0.7)

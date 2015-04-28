@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         //Defaults
         if(NSUserDefaults.standardUserDefaults().stringForKey("handle") == nil) {
             NSUserDefaults.standardUserDefaults().setValue("Miku", forKey: "handle")
@@ -25,11 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         if((NSUserDefaults.standardUserDefaults().stringForKey("UUID")) == nil) {
             NSUserDefaults.standardUserDefaults().setValue(NSUUID().UUIDString, forKey: "UUID")
         }
-        mpcManager = MPCManager()
+        mpcManager = MPCManager(hdl: NSUserDefaults.standardUserDefaults().stringForKey("handle")!)
         chatManager = ChatManager(manager: mpcManager)
         chatManager.delegate = self
-        mpcManager.handle = NSUserDefaults.standardUserDefaults().stringForKey("handle")
-        mpcManager.idName[mpcManager.peer.displayName] = mpcManager.handle
+        //mpcManager.handle = NSUserDefaults.standardUserDefaults().stringForKey("handle")
         let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
         println("I am \(UID!)")
         println("My handle is \(mpcManager.handle)")
@@ -39,10 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         return true
     }
     
+    
+    
     func setupTabBarController() {
         let tabBarController = self.window!.rootViewController as! YALFoldingTabBarController
         let item1:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "nearby_icon"), leftItemImage: nil, rightItemImage: nil)
-        let item2:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "profile_icon"), leftItemImage: UIImage(named: "edit_icon"), rightItemImage: nil)
+        let item2:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "profile_icon"), leftItemImage: nil, rightItemImage: nil)
         tabBarController.leftBarItems = [item1, item2]
         let item3 = YALTabBarItem(itemImage: UIImage(named: "new_chat_icon"), leftItemImage: UIImage(named: "reload_icon"), rightItemImage: UIImage(named: "new_chat_icon"))
         let item4 = YALTabBarItem(itemImage: UIImage(named: "settings_icon"), leftItemImage: nil, rightItemImage: nil)
@@ -69,15 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         if let message = dataDictionary["message"] {
             println("Appdelegate : handleMPC : \(message) : from : \(fromPeer.displayName)")
             //Archive
-            
             let archive = chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
         }
-        if let name = dataDictionary["name"] {
-            println("Appdelegate : change name of target to \(name)")
-            mpcManager.idName[fromPeer.displayName] = name
-        }
+        dispatch_async(dispatch_get_main_queue(), {
+            JDStatusBarNotification.showWithStatus("message from \(mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
+        })
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -27,7 +27,7 @@
 		7BF998BE1AE5F3A400BCC7C1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998BD1AE5F3A400BCC7C1 /* ChatViewController.swift */; };
 		7BF998C01AE5F5C500BCC7C1 /* ChatListDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998BF1AE5F5C500BCC7C1 /* ChatListDataCell.swift */; };
 		7BF998C21AE5F87D00BCC7C1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998C11AE5F87D00BCC7C1 /* SearchViewController.swift */; };
-		EB2E554CE0B729CD17D5C860 /* libPods-Proxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D9920D704B6ACE8A56ADC /* libPods-Proxi.a */; };
+		BFE59CDF2443CC1CC96C75C0 /* libPods-Proxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 798AB1D512C59C0BD881F24D /* libPods-Proxi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		732037B27A1FA80EC95A7371 /* Pods-Proxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Proxi/Pods-Proxi.debug.xcconfig"; sourceTree = "<group>"; };
+		798AB1D512C59C0BD881F24D /* libPods-Proxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Proxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B08FB841AE6202F00ABC45B /* AvaliablePeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliablePeerCell.swift; sourceTree = "<group>"; };
 		7B08FB861AE7331000ABC45B /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		7B08FB881AE7444E00ABC45B /* ChatNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatNavController.swift; path = Proxi/ChatNavController.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		7BF998BD1AE5F3A400BCC7C1 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		7BF998BF1AE5F5C500BCC7C1 /* ChatListDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListDataCell.swift; sourceTree = "<group>"; };
 		7BF998C11AE5F87D00BCC7C1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		ED8D9920D704B6ACE8A56ADC /* libPods-Proxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Proxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7D34AFDCEC9F7C8CC868DE /* Pods-Proxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Proxi/Pods-Proxi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB2E554CE0B729CD17D5C860 /* libPods-Proxi.a in Frameworks */,
+				BFE59CDF2443CC1CC96C75C0 /* libPods-Proxi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 		B5B784D85FFD3E312C6FE675 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ED8D9920D704B6ACE8A56ADC /* libPods-Proxi.a */,
+				798AB1D512C59C0BD881F24D /* libPods-Proxi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,6 +230,11 @@
 					7BF9988C1AE5812100BCC7C1 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 3L734FKMQW;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					7BF998A11AE5812100BCC7C1 = {
 						CreatedOnToolsVersion = 6.3;
