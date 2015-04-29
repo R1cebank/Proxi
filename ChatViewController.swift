@@ -81,10 +81,6 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
             println("ChatViewController : resetting badge")
             //cell.userImage = UIImageView(image: UIImage(named: "mo"))
         } else {
-            let hub = RKNotificationHub(view: cell.userImage)
-            hub.scaleCircleSizeBy(0.7)
-            hub.setCount(unreadCount)
-            hub.pop()
         }
         println("Setting \(unreadCount)")
         if(messageList.count == 0) {

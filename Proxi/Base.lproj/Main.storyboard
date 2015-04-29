@@ -288,7 +288,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7F-aI-a3s">
-                                                    <rect key="frame" x="82" y="17" width="205" height="17"/>
+                                                    <rect key="frame" x="82" y="17" width="205" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27" id="ljW-hV-r0M"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
                                                     <color key="textColor" red="0.42745098040000001" green="0.81176470590000005" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -300,13 +303,12 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgL-qQ-Af5">
-                                                    <rect key="frame" x="82" y="42" width="197" height="12"/>
+                                                    <rect key="frame" x="82" y="52" width="197" height="12"/>
                                                     <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45d-56-lNy">
-                                                    <rect key="frame" x="82" y="47" width="42" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -329,7 +331,6 @@
                                             <outlet property="lastMessage" destination="YgL-qQ-Af5" id="7AN-xs-kTf"/>
                                             <outlet property="peerID" destination="45d-56-lNy" id="mnV-Et-2Q0"/>
                                             <outlet property="peerName" destination="k7F-aI-a3s" id="IP0-hS-xTv"/>
-                                            <outlet property="userImage" destination="f6m-Bo-HRh" id="UgE-fo-on8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
