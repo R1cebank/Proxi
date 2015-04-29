@@ -186,6 +186,9 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         case MCSessionState.Connected:
             currentSession = session
             println("Connected to session: \(session)")
+            dispatch_async(dispatch_get_main_queue(), {
+                JDStatusBarNotification.showWithStatus("connected with \(getHandle(peer))", dismissAfter: NSTimeInterval(2), styleName: "JDStatusBarStyleSuccess")
+            })
             delegate?.connectedWithPeer(peerID)
             
         case MCSessionState.Connecting:
@@ -193,6 +196,9 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             
         default:
             println("Did not connect to session: \(session)")
+            dispatch_async(dispatch_get_main_queue(), {
+                JDStatusBarNotification.showWithStatus("disconnected with \(getHandle(peer))", dismissAfter: NSTimeInterval(2), styleName: "JDStatusBarStyleError")
+            })
         }
         NSKeyedArchiver.archiveRootObject(sessions.keys.array, toFile: sessionArchivePath)
     }
