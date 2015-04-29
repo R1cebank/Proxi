@@ -75,11 +75,23 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
             appDelegate.chatManager.saveMsg()
-            var msg = JSQMessage(senderId: appDelegate.mpcManager.getDisplayName(fromPeer), displayName: appDelegate.mpcManager.getHandle(fromPeer), text: message)
-            messages += [msg]
+            if(fromPeer.displayName == appDelegate.mpcManager.currentPeerID) {
+                var msg = JSQMessage(senderId: appDelegate.mpcManager.getDisplayName(fromPeer), displayName: appDelegate.mpcManager.getHandle(fromPeer), text: message)
+                messages += [msg]
+                dispatch_async(dispatch_get_main_queue(), {self.finishReceivingMessageAnimated(true)})
+            } else {
+                var unreadCount = appDelegate.chatManager.newOrGetUnread(fromPeer.displayName)
+                if(unreadCount != -1) {
+                    appDelegate.chatManager.unreadFrom[fromPeer.displayName] = unreadCount + 1
+                } else {
+                    appDelegate.chatManager.unreadFrom[fromPeer.displayName] = 1
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    JDStatusBarNotification.showWithStatus("message from \(self.appDelegate.mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
+                })
+            }
             println("MessageViewController : added message : \(message) from: \(fromPeer.displayName)")
         }
-        dispatch_async(dispatch_get_main_queue(), {self.finishReceivingMessageAnimated(true)})
         //self.finishReceivingMessageAnimated(true)
     }
     

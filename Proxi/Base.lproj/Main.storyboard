@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="80" width="320" height="359"/>
                                 <color key="backgroundColor" red="0.42111405759999998" green="0.4061982931" blue="0.66673954619999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="jwP-Ec-TG7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for peers..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaU-C2-GKQ">
@@ -119,9 +119,8 @@
                                         <constraint firstItem="vaU-C2-GKQ" firstAttribute="top" secondItem="jwP-Ec-TG7" secondAttribute="top" constant="18" id="L1s-6C-m1q"/>
                                         <constraint firstAttribute="trailing" secondItem="r8G-uS-fCD" secondAttribute="trailing" constant="30" id="MLy-5f-sV1"/>
                                         <constraint firstItem="vaU-C2-GKQ" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="OxL-7l-9Pq"/>
-                                        <constraint firstAttribute="bottom" secondItem="r8G-uS-fCD" secondAttribute="bottom" constant="25" id="Z09-UI-xhZ"/>
-                                        <constraint firstItem="r8G-uS-fCD" firstAttribute="top" secondItem="jwP-Ec-TG7" secondAttribute="top" constant="25" id="dM7-EW-Ks4"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="r8G-uS-fCD" secondAttribute="bottom" constant="-4" id="ivr-PQ-NH3"/>
+                                        <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="vaU-C2-GKQ" secondAttribute="bottom" constant="6" id="sz4-zw-fO2"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

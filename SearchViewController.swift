@@ -82,7 +82,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
+        if(appDelegate.mpcManager.sessions.count <= indexPath.row) {
+            return 60
+        }
+        var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        if(appDelegate.chatManager.messageArchive[id] != nil) {
+            return 0
+        } else {
+            return 60
+        }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.mpcManager.foundPeers.count
