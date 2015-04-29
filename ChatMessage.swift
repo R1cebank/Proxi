@@ -8,12 +8,20 @@
 
 import Foundation
 
-class ChatMessage: NSObject {
+class ChatMessage: NSObject, NSCoding {
     var sender: String!
     var message:  String!
     init(sdr: String, msg: String) {
         super.init()
         sender = sdr
         message = msg
+    }
+    required init(coder aDecoder: NSCoder) {
+        self.sender = aDecoder.decodeObjectForKey("sender") as! String
+        self.message = aDecoder.decodeObjectForKey("message") as! String
+    }
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.sender, forKey: "sender")
+        aCoder.encodeObject(self.message, forKey: "message")
     }
 }

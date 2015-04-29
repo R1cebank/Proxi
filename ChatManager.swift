@@ -22,6 +22,30 @@ class ChatManager: NSObject {
     var messageArchive = [String:NSMutableArray]()
     var unreadFrom = [String:Int32]()
     
+    lazy private var messageArchivePath: String = {
+        let fileManager = NSFileManager.defaultManager()
+        let documentDirectoryURLs = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as! [NSURL]
+        let archiveURL = documentDirectoryURLs.first!.URLByAppendingPathComponent("Proxi-Message", isDirectory: true)
+        return archiveURL.path!
+    }()
+    lazy private var unreadArchivePath: String = {
+        let fileManager = NSFileManager.defaultManager()
+        let documentDirectoryURLs = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as! [NSURL]
+        let archiveURL = documentDirectoryURLs.first!.URLByAppendingPathComponent("Proxi-Unread", isDirectory: true)
+        return archiveURL.path!
+    }()
+    
+    func saveMsg() {
+        NSKeyedArchiver.archiveRootObject(messageArchive, toFile: messageArchivePath)
+    }
+    func unarchiveSavedItems() {
+        if NSFileManager.defaultManager().fileExistsAtPath(messageArchivePath) {
+            messageArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(messageArchivePath) as! [String: NSMutableArray]
+        }
+        mpcManager.unarchiveSavedItems()
+        
+    }
+    
     init(manager: MPCManager) {
         super.init()
         mpcManager = manager

@@ -35,7 +35,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var currentPeerHandle   : String!
     
     
-    var sessions = [String : MCSession]()
+    var sessions = [String : ProxiSession]()
     
     var peer: MCPeerID!
     
@@ -48,6 +48,13 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var invitationHandler: ((Bool, MCSession!)->Void)!
     
     var isVisible: Bool!
+    
+    lazy private var sessionArchivePath: String = {
+        let fileManager = NSFileManager.defaultManager()
+        let documentDirectoryURLs = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as! [NSURL]
+        let archiveURL = documentDirectoryURLs.first!.URLByAppendingPathComponent("Proxi-Session", isDirectory: true)
+        return archiveURL.path!
+    }()
     
     
     init(hdl: String) {
@@ -87,18 +94,28 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         return data[1]
     }
     
-    func newOrGetSession(clientID: String) -> MCSession {
-        var session: MCSession
+    func newOrGetSession(clientID: String) -> ProxiSession {
+        var session: ProxiSession
         if let s = sessions[clientID] {
             println("Restoring session with: \(clientID)")
             session = s
         } else {
             println("Creating a new session with: \(clientID)")
-            sessions[clientID] = MCSession(peer: peer)
-            sessions[clientID]?.delegate = self
+            sessions[clientID] = ProxiSession(s: MCSession(peer: peer))
+            sessions[clientID]!.session.delegate = self
             session = sessions[clientID]!
         }
         return session
+    }
+    
+    func unarchiveSavedItems() {
+        if NSFileManager.defaultManager().fileExistsAtPath(sessionArchivePath) {
+            let keys = NSKeyedUnarchiver.unarchiveObjectWithFile(sessionArchivePath) as! [String]
+            for k in keys {
+                sessions[k] = ProxiSession(s: newOrGetSession(k).session)
+            }
+        }
+        
     }
     
     func startAdvertising() {
@@ -117,7 +134,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         foundPeers.append(peerID)
         if(sessions[peerID.displayName] != nil) {
             println("Recent peer is range, trying to reconnect (\(peerID.displayName))...")
-            browser.invitePeer(peerID, toSession: newOrGetSession(peerID.displayName), withContext: nil, timeout: 20)
+            browser.invitePeer(peerID, toSession: newOrGetSession(peerID.displayName).session, withContext: nil, timeout: 20)
         }
 
         delegate?.foundPeer()
@@ -146,7 +163,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
         self.invitationHandler = invitationHandler
         if(sessions[peerID.displayName] != nil) {
-            self.invitationHandler(true, self.newOrGetSession(peerID.displayName))
+            self.invitationHandler(true, self.newOrGetSession(peerID.displayName).session)
         } else {
             delegate?.invitationWasReceived(peerID.displayName)
         }
@@ -161,6 +178,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     // MARK: MCSessionDelegate method implementation
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
+        if(self.peer.displayName != peer.displayName) {
+            newOrGetSession(peer.displayName).state = state
+        }
+        println("Changing session table state to: \(state.rawValue)")
         switch state{
         case MCSessionState.Connected:
             currentSession = session
@@ -173,6 +194,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         default:
             println("Did not connect to session: \(session)")
         }
+        NSKeyedArchiver.archiveRootObject(sessions.keys.array, toFile: sessionArchivePath)
     }
     
     

@@ -53,6 +53,7 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
             let archive = appDelegate.chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
+            appDelegate.chatManager.saveMsg()
             var unreadCount = appDelegate.chatManager.newOrGetUnread(fromPeer.displayName)
             if(unreadCount != -1) {
                 appDelegate.chatManager.unreadFrom[fromPeer.displayName] = unreadCount + 1
@@ -104,7 +105,7 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ChatListDataCell
         appDelegate.mpcManager.currentPeerHandle = cell.peerName.text
         appDelegate.mpcManager.currentPeerID = cell.peerID.text
-        appDelegate.mpcManager.currentSession = appDelegate.mpcManager.sessions[cell.peerID.text!]
+        appDelegate.mpcManager.currentSession = appDelegate.mpcManager.sessions[cell.peerID.text!]?.session
         self.performSegueWithIdentifier("idSegueChat", sender: self)
     }
     //YAL Bar interacting

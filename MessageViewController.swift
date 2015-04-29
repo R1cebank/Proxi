@@ -74,7 +74,7 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             let archive = appDelegate.chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
-            
+            appDelegate.chatManager.saveMsg()
             var msg = JSQMessage(senderId: appDelegate.mpcManager.getDisplayName(fromPeer), displayName: appDelegate.mpcManager.getHandle(fromPeer), text: message)
             messages += [msg]
             println("MessageViewController : added message : \(message) from: \(fromPeer.displayName)")
@@ -100,7 +100,7 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         let archive = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
         let chatMessage = ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text)
         archive.addObject(chatMessage)
-        
+        appDelegate.chatManager.saveMsg()
         self.finishSendingMessageAnimated(true)
         println("MessageViewController : didPressSendButton : \(text) : \(senderId)")
     }

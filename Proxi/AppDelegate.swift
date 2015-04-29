@@ -15,11 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
     var window: UIWindow?
     var mpcManager: MPCManager!
     var chatManager: ChatManager!
+    var filemgr:       NSFileManager!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         //Defaults
+        filemgr = NSFileManager.defaultManager()
         if(NSUserDefaults.standardUserDefaults().stringForKey("handle") == nil) {
             NSUserDefaults.standardUserDefaults().setValue("Miku", forKey: "handle")
         }
@@ -29,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         mpcManager = MPCManager(hdl: NSUserDefaults.standardUserDefaults().stringForKey("handle")!)
         chatManager = ChatManager(manager: mpcManager)
         chatManager.delegate = self
+        chatManager.unarchiveSavedItems()
         //mpcManager.handle = NSUserDefaults.standardUserDefaults().stringForKey("handle")
         let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
         println("I am \(UID!)")
@@ -74,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
             let archive = chatManager.newOrGetArchive(fromPeer.displayName)
             let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
             archive.addObject(chatMessage)
+            chatManager.saveMsg()
         }
         dispatch_async(dispatch_get_main_queue(), {
             JDStatusBarNotification.showWithStatus("message from \(mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))

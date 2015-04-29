@@ -14,6 +14,7 @@
 		7B3EB4EC1AE8790D004D72D5 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4EB1AE8790D004D72D5 /* ChatManager.swift */; };
 		7B3EB4EE1AE88343004D72D5 /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4ED1AE88343004D72D5 /* ChatClient.swift */; };
 		7B3EB4F01AE88779004D72D5 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4EF1AE88779004D72D5 /* ChatMessage.swift */; };
+		7B4064DF1AF00F5D00F4AC79 /* ProxiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4064DE1AF00F5D00F4AC79 /* ProxiSession.swift */; };
 		7BA429891AE99568008C6B31 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA429881AE99568008C6B31 /* ProfileViewController.swift */; };
 		7BF998931AE5812100BCC7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998921AE5812100BCC7C1 /* AppDelegate.swift */; };
 		7BF998951AE5812100BCC7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998941AE5812100BCC7C1 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		7B3EB4EB1AE8790D004D72D5 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		7B3EB4ED1AE88343004D72D5 /* ChatClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		7B3EB4EF1AE88779004D72D5 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		7B4064DE1AF00F5D00F4AC79 /* ProxiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxiSession.swift; sourceTree = "<group>"; };
 		7BA429881AE99568008C6B31 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7BF9988D1AE5812100BCC7C1 /* Proxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF998911AE5812100BCC7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				7BF998BA1AE5E2A700BCC7C1 /* Proxima Nova Regular.otf */,
 				7BF998B21AE581B900BCC7C1 /* Bridge.h */,
 				7BF998B71AE5DC3500BCC7C1 /* MPCManager.swift */,
+				7B4064DE1AF00F5D00F4AC79 /* ProxiSession.swift */,
 				7B3EB4EB1AE8790D004D72D5 /* ChatManager.swift */,
 				7B3EB4ED1AE88343004D72D5 /* ChatClient.swift */,
 				7BF998BF1AE5F5C500BCC7C1 /* ChatListDataCell.swift */,
@@ -328,6 +331,7 @@
 				7BF998C21AE5F87D00BCC7C1 /* SearchViewController.swift in Sources */,
 				7B08FB891AE7444E00ABC45B /* ChatNavController.swift in Sources */,
 				7BF998931AE5812100BCC7C1 /* AppDelegate.swift in Sources */,
+				7B4064DF1AF00F5D00F4AC79 /* ProxiSession.swift in Sources */,
 				7B3EB4F01AE88779004D72D5 /* ChatMessage.swift in Sources */,
 				7B3EB4EE1AE88343004D72D5 /* ChatClient.swift in Sources */,
 				7BF998B81AE5DC3500BCC7C1 /* MPCManager.swift in Sources */,

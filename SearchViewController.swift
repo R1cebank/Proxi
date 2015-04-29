@@ -53,7 +53,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         alertView.addButtonWithTitle("Accept", type: SIAlertViewButtonType.Default) {
             (alertView) -> Void in
             println("AcceptedPeer: \(fromPeer)")
-            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.newOrGetSession(fromPeer))
+            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.newOrGetSession(fromPeer).session)
         }
         alertView.addButtonWithTitle("Decline", type: SIAlertViewButtonType.Cancel) {
             (alertView) -> Void in
@@ -97,7 +97,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
             alertView.addButtonWithTitle("OK", type: SIAlertViewButtonType.Default, handler: nil)
             alertView.show()
             
-            appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.newOrGetSession(peerName), withContext: nil, timeout: 20)
+            appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.newOrGetSession(peerName).session, withContext: nil, timeout: 20)
             break;
         default:
             break;
