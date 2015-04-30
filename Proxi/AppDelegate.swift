@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
     var window: UIWindow?
     var mpcManager: MPCManager!
     var chatManager: ChatManager!
+    var messageQueue: MessageQueue!
     var filemgr:       NSFileManager!
 
 
@@ -32,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         chatManager = ChatManager(manager: mpcManager)
         chatManager.delegate = self
         chatManager.unarchiveSavedItems()
+        messageQueue = MessageQueue()
+        messageQueue.unarchiveSavedItems()
         //mpcManager.handle = NSUserDefaults.standardUserDefaults().stringForKey("handle")
         let UID = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
         println("I am \(UID!)")

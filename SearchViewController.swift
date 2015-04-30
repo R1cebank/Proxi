@@ -65,6 +65,19 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
     }
     func connectedWithPeer(peerID: MCPeerID) {
         println("connected")
+        var queue = appDelegate.messageQueue.newOrGetForPeer(peerID.displayName)
+        for msg in queue {
+            let msg = msg as! ChatMessage
+            let text = msg.message
+            let messageDictionary: [String: String] = ["message": text]
+            if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.currentSession.connectedPeers[0] as! MCPeerID){
+                println("SearchViewController : Queued Message is sent")
+            }
+            else{
+                println("SearchViewController : Message could not send")
+            }
+        }
+        queue.removeAllObjects()
     }
     
     //UITableView

@@ -101,11 +101,18 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         self.messages += [message]
         //Sending through session
         let messageDictionary: [String: String] = ["message": text]
-        if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.currentSession.connectedPeers[0] as! MCPeerID){
-            println("MessageViewController : Message is sent")
+        if(appDelegate.mpcManager.currentSession.connectedPeers.count < 1) {
+            var queue = appDelegate.messageQueue.newOrGetForPeer(appDelegate.mpcManager.currentPeerID)
+            queue.addObject(ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text))
+            appDelegate.messageQueue.saveMsg()
         }
-        else{
-            println("MessageViewController : Message could not send")
+        else {
+            if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.currentSession.connectedPeers[0] as! MCPeerID){
+                println("MessageViewController : Message is sent")
+            }
+            else{
+                println("MessageViewController : Message could not send")
+            }
         }
         //Archive
         
