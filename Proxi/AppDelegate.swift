@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         let item3 = YALTabBarItem(itemImage: UIImage(named: "new_chat_icon"), leftItemImage: UIImage(named: "reload_icon"), rightItemImage: UIImage(named: "new_chat_icon"))
         let item4 = YALTabBarItem(itemImage: UIImage(named: "settings_icon"), leftItemImage: nil, rightItemImage: nil)
         tabBarController.rightBarItems = [item3, item4]
-        tabBarController.centerButtonImage = UIImage(named: "tele")
+        tabBarController.centerButtonImage = UIImage(named: "plus_icon")
         tabBarController.selectedIndex = 0
         tabBarController.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight
         tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset

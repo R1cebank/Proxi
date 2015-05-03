@@ -78,6 +78,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
             }
         }
         queue.removeAllObjects()
+        appDelegate.messageQueue.saveMsg()
     }
     
     //UITableView
