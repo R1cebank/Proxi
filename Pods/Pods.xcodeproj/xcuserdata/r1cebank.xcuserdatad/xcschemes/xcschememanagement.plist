@@ -54,55 +54,85 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ProxiTests-Nimble.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ProxiTests-Quick.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ProxiTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E996747E912B0D8179400C6</key>
+		<key>032E617F1816B820C09CDA45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28EF7051DC874E2D9F173200</key>
+		<key>1748604F9D3E82F27686A243</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41CE9D542F02D553D2347964</key>
+		<key>3CF0B44AE54EF28E1B1D3FD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4329F8416C034354EA97D7E8</key>
+		<key>57AE0B2E329188CB270C1E7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C10538B631D721D427FE3F2</key>
+		<key>71CF95FCFB117A0CC8FE25FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>829811FCA5C135A8D7B6FD5F</key>
+		<key>8B779F650EC51DC13983FFBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F578AEE945E3E6EC0FD2864</key>
+		<key>8EFF0A4B5E0157C0424682C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9C265A3CF5CE9E903001BDE</key>
+		<key>A5B14F9F75F3C17ACFE1A680</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC3FC4D06F50EDDB9ABF7307</key>
+		<key>ADFF304F5D415EF327B0CB95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C8327C1713F0ECD837235D3F</key>
+		<key>CAC35B0A8303EC4C523A51E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D77F5073DB4E3B110BBEE6A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC2D2F3EBD7681B0345E8120</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC4873A8A4C88C693AE75B6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

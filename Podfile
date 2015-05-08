@@ -15,6 +15,9 @@ pod 'RandomColorSwift'
 end
 
 target 'ProxiTests' do
+use_frameworks!
+pod 'Quick'
+pod 'Nimble'
 
 end
 

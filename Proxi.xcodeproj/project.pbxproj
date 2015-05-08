@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		638E1B4D6A4C5A6B4DA5F2A6 /* Pods_ProxiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B543D7CA5472A66764D9131 /* Pods_ProxiTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7B08FB851AE6202F00ABC45B /* AvaliablePeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB841AE6202F00ABC45B /* AvaliablePeerCell.swift */; };
 		7B08FB871AE7331000ABC45B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB861AE7331000ABC45B /* MessageViewController.swift */; };
 		7B08FB891AE7444E00ABC45B /* ChatNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB881AE7444E00ABC45B /* ChatNavController.swift */; };
 		7B08FB8B1AE7634A00ABC45B /* MessageContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB8A1AE7634A00ABC45B /* MessageContainerController.swift */; };
 		7B28DE6E1AFC4D4C002C62A4 /* ProxityUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B28DE6D1AFC4D4C002C62A4 /* ProxityUtil.swift */; };
+		7B28DE741AFC90B4002C62A4 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B28DE731AFC90B4002C62A4 /* ModelTests.swift */; };
 		7B3EB4EC1AE8790D004D72D5 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4EB1AE8790D004D72D5 /* ChatManager.swift */; };
 		7B3EB4EE1AE88343004D72D5 /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4ED1AE88343004D72D5 /* ChatClient.swift */; };
 		7B3EB4F01AE88779004D72D5 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4EF1AE88779004D72D5 /* ChatMessage.swift */; };
@@ -44,12 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28ABDE4DA5A1C6D1CF95DEB3 /* Pods-ProxiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProxiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProxiTests/Pods-ProxiTests.release.xcconfig"; sourceTree = "<group>"; };
+		393761F3BA582128DAC70E3B /* Pods-ProxiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProxiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProxiTests/Pods-ProxiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B543D7CA5472A66764D9131 /* Pods_ProxiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProxiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732037B27A1FA80EC95A7371 /* Pods-Proxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Proxi/Pods-Proxi.debug.xcconfig"; sourceTree = "<group>"; };
 		7B08FB841AE6202F00ABC45B /* AvaliablePeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliablePeerCell.swift; sourceTree = "<group>"; };
 		7B08FB861AE7331000ABC45B /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		7B08FB881AE7444E00ABC45B /* ChatNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatNavController.swift; path = Proxi/ChatNavController.swift; sourceTree = "<group>"; };
 		7B08FB8A1AE7634A00ABC45B /* MessageContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageContainerController.swift; sourceTree = "<group>"; };
 		7B28DE6D1AFC4D4C002C62A4 /* ProxityUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxityUtil.swift; sourceTree = "<group>"; };
+		7B28DE6F1AFC9032002C62A4 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Pods/../build/Debug-iphoneos/Pods-Proxi/Quick.framework"; sourceTree = "<group>"; };
+		7B28DE721AFC90B4002C62A4 /* ProxiTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProxiTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7B28DE731AFC90B4002C62A4 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		7B3EB4EB1AE8790D004D72D5 /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		7B3EB4ED1AE88343004D72D5 /* ChatClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		7B3EB4EF1AE88779004D72D5 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -89,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638E1B4D6A4C5A6B4DA5F2A6 /* Pods_ProxiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,13 +109,25 @@
 			children = (
 				732037B27A1FA80EC95A7371 /* Pods-Proxi.debug.xcconfig */,
 				FC7D34AFDCEC9F7C8CC868DE /* Pods-Proxi.release.xcconfig */,
+				393761F3BA582128DAC70E3B /* Pods-ProxiTests.debug.xcconfig */,
+				28ABDE4DA5A1C6D1CF95DEB3 /* Pods-ProxiTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B28DE711AFC9093002C62A4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7B28DE731AFC90B4002C62A4 /* ModelTests.swift */,
+				7B28DE721AFC90B4002C62A4 /* ProxiTests-Bridging-Header.h */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 		7BF998841AE5812100BCC7C1 = {
 			isa = PBXGroup;
 			children = (
+				7B28DE711AFC9093002C62A4 /* Tests */,
 				7BF998B41AE5D98600BCC7C1 /* View Controllers */,
 				7BF998B31AE581E800BCC7C1 /* Misc */,
 				7BF9988F1AE5812100BCC7C1 /* Proxi */,
@@ -182,7 +203,9 @@
 		B5B784D85FFD3E312C6FE675 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B28DE6F1AFC9032002C62A4 /* Quick.framework */,
 				AF6AA4C8E292CA5FE3524EF6 /* Pods_Proxi.framework */,
+				4B543D7CA5472A66764D9131 /* Pods_ProxiTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7BF998AF1AE5812100BCC7C1 /* Build configuration list for PBXNativeTarget "ProxiTests" */;
 			buildPhases = (
+				60865AF70C4081350AF6F632 /* Check Pods Manifest.lock */,
 				7BF9989E1AE5812100BCC7C1 /* Sources */,
 				7BF9989F1AE5812100BCC7C1 /* Frameworks */,
 				7BF998A01AE5812100BCC7C1 /* Resources */,
+				226F248976C39FD88DC7C631 /* Embed Pods Frameworks */,
+				969D3CD7585973690B0E68E8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +320,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		226F248976C39FD88DC7C631 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProxiTests/Pods-ProxiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		31DE924C693EBAB441795170 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +363,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60865AF70C4081350AF6F632 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		969D3CD7585973690B0E68E8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProxiTests/Pods-ProxiTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F71653C420F5A8283CDF3FA6 /* Copy Pods Resources */ = {
@@ -371,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B28DE741AFC90B4002C62A4 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,11 +594,14 @@
 		};
 		7BF998B01AE5812100BCC7C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393761F3BA582128DAC70E3B /* Pods-ProxiTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-Proxi",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -535,21 +610,27 @@
 				INFOPLIST_FILE = ProxiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProxiTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Proxi.app/Proxi";
 			};
 			name = Debug;
 		};
 		7BF998B11AE5812100BCC7C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28ABDE4DA5A1C6D1CF95DEB3 /* Pods-ProxiTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-Proxi",
 				);
 				INFOPLIST_FILE = ProxiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProxiTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Proxi.app/Proxi";
 			};
 			name = Release;

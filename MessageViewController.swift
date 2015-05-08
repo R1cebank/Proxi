@@ -163,7 +163,7 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         var archiveData = archive.objectAtIndex(indexPath.row) as! ChatMessage
         println("MessageViewController : \(archiveData.message) testing for inQueue")
         if(appDelegate.messageQueue.isInQueue(appDelegate.mpcManager.currentPeerID, message: archiveData)) {
-            return NSAttributedString(string: "Archived - will send when in range")
+            return NSAttributedString(string: "archived - will send when in range")
         } else {
             return nil
         }
@@ -180,7 +180,12 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
     }
     // CellBottomLabel
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-        return NSAttributedString(string: "Miku")
+        var data = self.messages[indexPath.row]
+        if (data.senderId == self.senderId) {
+            return NSAttributedString(string: appDelegate.mpcManager.handle)
+        } else {
+            return NSAttributedString(string: appDelegate.mpcManager.currentPeerHandle)
+        }
     }
     
     // CellBottomLabel height

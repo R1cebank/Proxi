@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "41CE9D542F02D553D2347964"
+               BlueprintIdentifier = "3CF0B44AE54EF28E1B1D3FD4"
                BuildableName = "RandomColorSwift.framework"
                BlueprintName = "Pods-Proxi-RandomColorSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
