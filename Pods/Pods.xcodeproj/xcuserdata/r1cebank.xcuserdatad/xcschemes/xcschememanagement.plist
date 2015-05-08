@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Proxi-RandomColorSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Proxi-SIAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BF2467701A49B2484101671</key>
+		<key>0E996747E912B0D8179400C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3189AC4CD40A388DAA3734F5</key>
+		<key>28EF7051DC874E2D9F173200</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>448BBBBBCA5D0586B68BDBEA</key>
+		<key>41CE9D542F02D553D2347964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5424BA80550224CCDA043DFA</key>
+		<key>4329F8416C034354EA97D7E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BF33C0DE8F3C2D53FDCBCD3</key>
+		<key>4C10538B631D721D427FE3F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD3CE0D0A1E8C985DC847311</key>
+		<key>829811FCA5C135A8D7B6FD5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C461FF9DE7693820DBF92354</key>
+		<key>8F578AEE945E3E6EC0FD2864</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D97EF5F6731B962CF65FA669</key>
+		<key>A9C265A3CF5CE9E903001BDE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDD471669DB6522F35499886</key>
+		<key>BC3FC4D06F50EDDB9ABF7307</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C8327C1713F0ECD837235D3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

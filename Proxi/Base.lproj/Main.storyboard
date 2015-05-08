@@ -295,7 +295,7 @@
                                                     <color key="textColor" red="0.42745098040000001" green="0.81176470590000005" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mo" translatesAutoresizingMaskIntoConstraints="NO" id="f6m-Bo-HRh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="f6m-Bo-HRh">
                                                     <rect key="frame" x="17" y="12" width="51" height="51"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="51" id="LDY-FH-1pv"/>
@@ -327,6 +327,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="avatarImage" destination="f6m-Bo-HRh" id="K1o-bT-d8S"/>
                                             <outlet property="lastMessage" destination="YgL-qQ-Af5" id="7AN-xs-kTf"/>
                                             <outlet property="peerID" destination="45d-56-lNy" id="mnV-Et-2Q0"/>
                                             <outlet property="peerName" destination="k7F-aI-a3s" id="IP0-hS-xTv"/>
@@ -441,10 +442,10 @@
     </scenes>
     <resources>
         <image name="discover_bar" width="320" height="60"/>
-        <image name="mo" width="37" height="37"/>
         <image name="nav_bar" width="320" height="60"/>
         <image name="profile bar" width="320" height="60"/>
         <image name="setting_bar" width="320" height="60"/>
+        <image name="user" width="48" height="46"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

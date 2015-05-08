@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AMPopTip
 
 class ProfileViewController : UIViewController, UITextFieldDelegate {
     

@@ -8,6 +8,8 @@
 
 import UIKit
 import MultipeerConnectivity
+import FoldingTabBar
+import JDStatusBarNotification
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
@@ -52,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         let item1:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "nearby_icon"), leftItemImage: nil, rightItemImage: nil)
         let item2:YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "profile_icon"), leftItemImage: nil, rightItemImage: nil)
         tabBarController.leftBarItems = [item1, item2]
-        let item3 = YALTabBarItem(itemImage: UIImage(named: "new_chat_icon"), leftItemImage: UIImage(named: "reload_icon"), rightItemImage: UIImage(named: "new_chat_icon"))
+        let item3 = YALTabBarItem(itemImage: UIImage(named: "new_chat_icon"), leftItemImage: nil, rightItemImage: nil)
         let item4 = YALTabBarItem(itemImage: UIImage(named: "settings_icon"), leftItemImage: nil, rightItemImage: nil)
         tabBarController.rightBarItems = [item3, item4]
         tabBarController.centerButtonImage = UIImage(named: "plus_icon")
@@ -78,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
             println("Appdelegate : handleMPC : \(message) : from : \(fromPeer.displayName)")
             //Archive
             let archive = chatManager.newOrGetArchive(fromPeer.displayName)
-            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
+            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message, date: NSDate())
             archive.addObject(chatMessage)
             chatManager.saveMsg()
         }

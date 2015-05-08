@@ -8,6 +8,9 @@
 
 import UIKit
 import MultipeerConnectivity
+import SWTableViewCell
+import JDStatusBarNotification
+import SIAlertView
 
 class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCellDelegate, UITableViewDataSource, MPCManagerDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

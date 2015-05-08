@@ -8,6 +8,9 @@
 
 import UIKit
 import MultipeerConnectivity
+import FoldingTabBar
+import JDStatusBarNotification
+import JSQMessagesViewController
 
 class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, ChatManagerDelegate, YALTabBarInteracting {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -51,7 +54,7 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
             //Archive
             
             let archive = appDelegate.chatManager.newOrGetArchive(fromPeer.displayName)
-            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
+            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message, date: NSDate())
             archive.addObject(chatMessage)
             appDelegate.chatManager.saveMsg()
             var unreadCount = appDelegate.chatManager.newOrGetUnread(fromPeer.displayName)
@@ -73,6 +76,8 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
         var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
         cell.peerID.text = id
         cell.peerName.text = appDelegate.mpcManager.getHandleFromID(id)
+        var avatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(getInitial(appDelegate.mpcManager.getHandleFromID(id)), backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
+        cell.avatarImage = UIImageView(image: avatar.avatarHighlightedImage)
         //cell.userImage = UIImageView(image: UIImage(named: "mo"))
         //Change to load last message
         var messageList = appDelegate.chatManager.newOrGetArchive(id)

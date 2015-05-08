@@ -37,6 +37,16 @@ class MessageQueue : NSObject {
         }
         return archive
     }
+    func isInQueue(peer: String, message: ChatMessage) -> Bool {
+        var array = newOrGetForPeer(peer)
+        for msg in array {
+            let msg = msg as! ChatMessage
+            if((msg.message == message.message) && (msg.time.compare(message.time) == NSComparisonResult.OrderedSame)) {
+                return true
+            }
+        }
+        return false
+    }
     func saveMsg() {
         NSKeyedArchiver.archiveRootObject(messages, toFile: messageQueuePath)
     }

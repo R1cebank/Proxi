@@ -10,6 +10,7 @@
 
 import UIKit
 import MultipeerConnectivity
+import JDStatusBarNotification
 
 
 protocol MPCManagerDelegate {

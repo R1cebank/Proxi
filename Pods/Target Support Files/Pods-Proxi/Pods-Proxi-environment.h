@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_RKNotificationHub 0
 #define COCOAPODS_VERSION_PATCH_RKNotificationHub 5
 
+// RandomColorSwift
+#define COCOAPODS_POD_AVAILABLE_RandomColorSwift
+#define COCOAPODS_VERSION_MAJOR_RandomColorSwift 0
+#define COCOAPODS_VERSION_MINOR_RandomColorSwift 0
+#define COCOAPODS_VERSION_PATCH_RandomColorSwift 1
+
 // SIAlertView
 #define COCOAPODS_POD_AVAILABLE_SIAlertView
 #define COCOAPODS_VERSION_MAJOR_SIAlertView 1

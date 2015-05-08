@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FDD471669DB6522F35499886"
-               BuildableName = "libPods-Proxi-SWTableViewCell.a"
+               BlueprintIdentifier = "8F578AEE945E3E6EC0FD2864"
+               BuildableName = "SWTableViewCell.framework"
                BlueprintName = "Pods-Proxi-SWTableViewCell"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

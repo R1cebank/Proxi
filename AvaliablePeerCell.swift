@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SWTableViewCell
 
 class AvaliablePeerCell : SWTableViewCell {
     @IBOutlet weak var randomName: UILabel!

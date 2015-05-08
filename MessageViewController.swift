@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 import MultipeerConnectivity
-
+import JSQMessagesViewController
+import JDStatusBarNotification
+import RandomColorSwift
 
 class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
     
@@ -19,14 +21,19 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
     var messages = [JSQMessage]()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 94/255, green: 91/255, blue: 149/255, alpha: 1))
+    var selfAvatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("1", backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
+    var foreignAvatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("2", backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
+    var selfColor = randomColor()
+    var foreignColor = randomColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.senderId = appDelegate.mpcManager.peer.displayName
         self.senderDisplayName = appDelegate.mpcManager.handle
         self.inputToolbar.contentView.leftBarButtonItem = nil
-        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
-        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
+        var defaultAvatarSize: CGSize = CGSizeMake(kJSQMessagesCollectionViewAvatarSizeDefault, kJSQMessagesCollectionViewAvatarSizeDefault)
+        self.collectionView.collectionViewLayout.incomingAvatarViewSize = defaultAvatarSize
+        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = defaultAvatarSize
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -46,6 +53,10 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         }
         appDelegate.chatManager.unreadFrom[appDelegate.mpcManager.currentPeerID] = -1
         println("Resetting unreadCount from \(appDelegate.mpcManager.currentPeerID)")
+        selfColor = randomColor()
+        foreignColor = randomColor()
+        selfAvatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(getInitial(appDelegate.mpcManager.handle), backgroundColor: selfColor, textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
+        foreignAvatar =  JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(getInitial(appDelegate.mpcManager.currentPeerHandle), backgroundColor: foreignColor, textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
         self.collectionView.reloadData()
         //Restore delegate
         appDelegate.chatManager.delegate = self
@@ -72,7 +83,7 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             //Archive
             
             let archive = appDelegate.chatManager.newOrGetArchive(fromPeer.displayName)
-            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message)
+            let chatMessage = ChatMessage(sdr: fromPeer.displayName, msg: message, date: NSDate())
             archive.addObject(chatMessage)
             appDelegate.chatManager.saveMsg()
             if(fromPeer.displayName == appDelegate.mpcManager.currentPeerID) {
@@ -97,13 +108,13 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
     
     //Message handling part
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+        var currentTime = NSDate()
         var message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text)
-        self.messages += [message]
         //Sending through session
         let messageDictionary: [String: String] = ["message": text]
         if(appDelegate.mpcManager.currentSession.connectedPeers.count < 1) {
             var queue = appDelegate.messageQueue.newOrGetForPeer(appDelegate.mpcManager.currentPeerID)
-            queue.addObject(ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text))
+            queue.addObject(ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text, date: currentTime))
             appDelegate.messageQueue.saveMsg()
         }
         else {
@@ -117,9 +128,10 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         //Archive
         
         let archive = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
-        let chatMessage = ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text)
+        let chatMessage = ChatMessage(sdr: appDelegate.mpcManager.peer.displayName, msg: text, date: currentTime)
         archive.addObject(chatMessage)
         appDelegate.chatManager.saveMsg()
+        self.messages += [message]
         self.finishSendingMessageAnimated(true)
         println("MessageViewController : didPressSendButton : \(text) : \(senderId)")
     }
@@ -136,11 +148,44 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         }
     }
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+        var data = self.messages[indexPath.row]
+        if (data.senderId == self.senderId) {
+            return self.selfAvatar
+        } else {
+            return self.foreignAvatar
+        }
     }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.messages.count;
     }
+    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
+        var archive = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID) as NSMutableArray
+        var archiveData = archive.objectAtIndex(indexPath.row) as! ChatMessage
+        println("MessageViewController : \(archiveData.message) testing for inQueue")
+        if(appDelegate.messageQueue.isInQueue(appDelegate.mpcManager.currentPeerID, message: archiveData)) {
+            return NSAttributedString(string: "Archived - will send when in range")
+        } else {
+            return nil
+        }
+    }
+    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        var archive = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID) as NSMutableArray
+        var archiveData = archive.objectAtIndex(indexPath.row) as! ChatMessage
+        println("MessageViewController : \(archiveData.message) testing for inQueue")
+        if(appDelegate.messageQueue.isInQueue(appDelegate.mpcManager.currentPeerID, message: archiveData)) {
+            return kJSQMessagesCollectionViewCellLabelHeightDefault
+        } else {
+            return 0
+        }
+    }
+    // CellBottomLabel
+    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
+        return NSAttributedString(string: "Miku")
+    }
     
+    // CellBottomLabel height
+    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return kJSQMessagesCollectionViewCellLabelHeightDefault
+    }
     
 }
