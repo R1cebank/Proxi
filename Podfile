@@ -11,6 +11,7 @@ pod 'RKNotificationHub'
 pod 'JDStatusBarNotification'
 pod 'AMPopTip'
 pod 'RandomColorSwift'
+pod 'GBFlatButton'
 
 end
 

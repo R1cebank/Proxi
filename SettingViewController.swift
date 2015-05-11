@@ -7,12 +7,41 @@
 //
 
 import UIKit
+import GBFlatButton
+import SIAlertView
 
 class SettingViewController : UIViewController {
     
     @IBOutlet weak var setVisible: UISwitch!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    @IBAction func resetAll(sender: AnyObject) {
+        let alertView = SIAlertView(title: "Reset all data?", andMessage: "This will clear all of your recent peers and all chat logs. Are you sure?")
+        alertView.addButtonWithTitle("Yes", type: SIAlertViewButtonType.Default) {
+            (alertView) -> Void in
+            println("Clearing data")
+            self.appDelegate.mpcManager.reset()
+            self.appDelegate.chatManager.reset()
+            self.appDelegate.messageQueue.reset()
+            self.appDelegate.reset()
+            let alertView2 = SIAlertView(title: "Reset complete", andMessage: "The application will now exit") as SIAlertView
+            alertView2.addButtonWithTitle("OK", type: SIAlertViewButtonType.Default) {
+                (alertView2) -> Void in
+                self.appDelegate.applicationWillTerminate(UIApplication.sharedApplication())
+                exit(0)
+                
+            }
+            alertView2.show()
+        }
+        alertView.addButtonWithTitle("No", type: SIAlertViewButtonType.Cancel) {
+            (alertView) -> Void in
+            println("Dismiss reset")
+        }
+        
+        alertView.show()
+    }
+    
     
     @IBAction func setVisibleChanged(sender: UISwitch) {
         if(sender.on) {

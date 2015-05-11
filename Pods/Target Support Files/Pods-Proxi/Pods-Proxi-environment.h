@@ -12,23 +12,17 @@
 #define COCOAPODS_VERSION_MINOR_AMPopTip 7
 #define COCOAPODS_VERSION_PATCH_AMPopTip 1
 
-// EAIntroView
-#define COCOAPODS_POD_AVAILABLE_EAIntroView
-#define COCOAPODS_VERSION_MAJOR_EAIntroView 2
-#define COCOAPODS_VERSION_MINOR_EAIntroView 7
-#define COCOAPODS_VERSION_PATCH_EAIntroView 3
-
-// EARestrictedScrollView
-#define COCOAPODS_POD_AVAILABLE_EARestrictedScrollView
-#define COCOAPODS_VERSION_MAJOR_EARestrictedScrollView 0
-#define COCOAPODS_VERSION_MINOR_EARestrictedScrollView 1
-#define COCOAPODS_VERSION_PATCH_EARestrictedScrollView 0
-
 // FoldingTabBar
 #define COCOAPODS_POD_AVAILABLE_FoldingTabBar
 #define COCOAPODS_VERSION_MAJOR_FoldingTabBar 1
 #define COCOAPODS_VERSION_MINOR_FoldingTabBar 0
 #define COCOAPODS_VERSION_PATCH_FoldingTabBar 0
+
+// GBFlatButton
+#define COCOAPODS_POD_AVAILABLE_GBFlatButton
+#define COCOAPODS_VERSION_MAJOR_GBFlatButton 2
+#define COCOAPODS_VERSION_MINOR_GBFlatButton 1
+#define COCOAPODS_VERSION_PATCH_GBFlatButton 0
 
 // JDStatusBarNotification
 #define COCOAPODS_POD_AVAILABLE_JDStatusBarNotification

@@ -8,7 +8,6 @@
         <!--Walkthrough View Controller-->
         <scene sceneID="f1r-A2-2vT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9eF-Ui-KFq" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="walk" id="txJ-gV-nlq" customClass="BWWalkthroughViewController" customModule="Proxi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N4y-CV-VgM"/>
@@ -79,6 +78,7 @@
                         <outlet property="prevButton" destination="3Ad-hv-8C6" id="G3h-V1-1Nj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9eF-Ui-KFq" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="17" y="-853"/>
         </scene>

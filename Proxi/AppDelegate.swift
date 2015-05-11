@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
             NSUserDefaults.standardUserDefaults().setValue(NSUUID().UUIDString, forKey: "UUID")
         }
         mpcManager = MPCManager(hdl: NSUserDefaults.standardUserDefaults().stringForKey("handle")!)
+        mpcManager.unarchiveSavedItems()
         chatManager = ChatManager(manager: mpcManager)
         chatManager.delegate = self
         chatManager.unarchiveSavedItems()
@@ -45,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(chatManager, selector: "handleMPCReceivedDataWithNotification:", name: "receivedMPCDataNotification", object: nil)
         setupTabBarController()
         return true
+    }
+    
+    func reset() {
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
     }
     
     

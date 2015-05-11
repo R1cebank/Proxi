@@ -9,17 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Proxi-EAIntroView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Proxi-EARestrictedScrollView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Proxi-FoldingTabBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Proxi-GBFlatButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,77 +77,72 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08B440368EB87FE50843BA5E</key>
+		<key>0D1A2631825FE1FCD79D5F3C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C8F872CEC68DF3592F6508E</key>
+		<key>2DFD5CE8B105217DC1C57F28</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1F1AFE57E6D0BD3BFDB4F017</key>
+		<key>4B78E09C1A37E9DD31F6D9D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>205D64830FC31D11363628DD</key>
+		<key>50F93917CBF0F8157947B348</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4205909A56F9AA31EF78CE9D</key>
+		<key>66C968F2BB007F3EE49FD7A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>441F813BC57965C3880ED7CD</key>
+		<key>7D4466414FA286C160433F38</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45B2BE5B794DC4DA7A1429F8</key>
+		<key>7EE0E8000459C3892C6B9FB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52F953BB0A53F65CA96837E6</key>
+		<key>9C721CCA83B812B39DE34EF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61D6FF2C86EF90432259C378</key>
+		<key>9F731F61F4C19B8367A1898E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E281179BE7A9344C983E765</key>
+		<key>A5EAE092F3F6E627D757F95A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>951B786CCA88302DFC0D8C71</key>
+		<key>A985D0FA9B854CDD5CD24664</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B33FF2EAAB0EB6FBC52CC6C0</key>
+		<key>D52B7005A81E8226B8EBA372</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B600558BAB68D85DB2BEB524</key>
+		<key>ED5015C05AD70F217420C17E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3F495D7716665DFB9FA6202</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE9B524D8F5B1744A5C8C283</key>
+		<key>FC2BA551D2FF1EA43A2FCADD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

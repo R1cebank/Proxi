@@ -49,9 +49,8 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AMPopTip.framework'
-  install_framework 'EAIntroView.framework'
-  install_framework 'EARestrictedScrollView.framework'
   install_framework 'FoldingTabBar.framework'
+  install_framework 'GBFlatButton.framework'
   install_framework 'JDStatusBarNotification.framework'
   install_framework 'JSQMessagesViewController.framework'
   install_framework 'JSQSystemSoundPlayer.framework'
@@ -62,9 +61,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AMPopTip.framework'
-  install_framework 'EAIntroView.framework'
-  install_framework 'EARestrictedScrollView.framework'
   install_framework 'FoldingTabBar.framework'
+  install_framework 'GBFlatButton.framework'
   install_framework 'JDStatusBarNotification.framework'
   install_framework 'JSQMessagesViewController.framework'
   install_framework 'JSQSystemSoundPlayer.framework'

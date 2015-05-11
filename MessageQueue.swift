@@ -50,6 +50,12 @@ class MessageQueue : NSObject {
     func saveMsg() {
         NSKeyedArchiver.archiveRootObject(messages, toFile: messageQueuePath)
     }
+    func reset() {
+        if NSFileManager.defaultManager().fileExistsAtPath(messageQueuePath) {
+            NSFileManager.defaultManager().removeItemAtPath(messageQueuePath, error: nil)
+        }
+        messages.removeAll()
+    }
     func unarchiveSavedItems() {
         if NSFileManager.defaultManager().fileExistsAtPath(messageQueuePath) {
             messages = NSKeyedUnarchiver.unarchiveObjectWithFile(messageQueuePath) as! [String: NSMutableArray]

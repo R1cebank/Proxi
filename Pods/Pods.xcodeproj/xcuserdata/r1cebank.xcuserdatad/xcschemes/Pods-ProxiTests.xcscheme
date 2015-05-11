@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52F953BB0A53F65CA96837E6"
+               BlueprintIdentifier = "A985D0FA9B854CDD5CD24664"
                BuildableName = "Pods_ProxiTests.framework"
                BlueprintName = "Pods-ProxiTests"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -38,12 +38,19 @@ class ChatManager: NSObject {
     func saveMsg() {
         NSKeyedArchiver.archiveRootObject(messageArchive, toFile: messageArchivePath)
     }
+    
     func unarchiveSavedItems() {
         if NSFileManager.defaultManager().fileExistsAtPath(messageArchivePath) {
             messageArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(messageArchivePath) as! [String: NSMutableArray]
         }
-        mpcManager.unarchiveSavedItems()
         
+    }
+    
+    func reset() {
+        if NSFileManager.defaultManager().fileExistsAtPath(messageArchivePath) {
+            NSFileManager.defaultManager().removeItemAtPath(messageArchivePath, error: nil)
+        }
+        messageArchive.removeAll()
     }
     
     init(manager: MPCManager) {

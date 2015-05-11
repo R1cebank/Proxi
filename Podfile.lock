@@ -1,9 +1,7 @@
 PODS:
   - AMPopTip (0.7.1)
-  - EAIntroView (2.7.3):
-    - EARestrictedScrollView (~> 0.1.0)
-  - EARestrictedScrollView (0.1.0)
   - FoldingTabBar (1.0.0)
+  - GBFlatButton (2.1.0)
   - JDStatusBarNotification (1.5.2)
   - JSQMessagesViewController (7.0.1):
     - JSQSystemSoundPlayer (~> 2.0.1)
@@ -17,8 +15,8 @@ PODS:
 
 DEPENDENCIES:
   - AMPopTip
-  - EAIntroView (~> 2.7.0)
   - FoldingTabBar (~> 1.0.0)
+  - GBFlatButton
   - JDStatusBarNotification
   - JSQMessagesViewController
   - Nimble
@@ -30,9 +28,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AMPopTip: 5a78abc067fe3e2fb5d3980072ffae51c8c4f6c5
-  EAIntroView: bedde44388280d71c9798ce36c82720901596355
-  EARestrictedScrollView: 5ab3eadd9ea55282cc72df0daecb09803059e3a0
   FoldingTabBar: 463d247453a2ba826ae79f5be1e6b8b93b6aa0ce
+  GBFlatButton: cb6066c6d92a7d031f089d62408ce3c259bb8131
   JDStatusBarNotification: a36d09ccbb047217572b074a61e7ca10dddc5f0a
   JSQMessagesViewController: 03fba8a3021a3ddc1c91847f180ffe549f2e8cf2
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d

@@ -57,6 +57,13 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         return archiveURL.path!
     }()
     
+    func reset() {
+        if NSFileManager.defaultManager().fileExistsAtPath(sessionArchivePath) {
+            NSFileManager.defaultManager().removeItemAtPath(sessionArchivePath, error: nil)
+        }
+        sessions.removeAll()
+    }
+    
     
     init(hdl: String) {
         super.init()
