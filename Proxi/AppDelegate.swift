@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         //Defaults
         filemgr = NSFileManager.defaultManager()
         if(NSUserDefaults.standardUserDefaults().stringForKey("handle") == nil) {
-            NSUserDefaults.standardUserDefaults().setValue("Miku", forKey: "handle")
+            NSUserDefaults.standardUserDefaults().setValue("Anonymous", forKey: "handle")
         }
         if((NSUserDefaults.standardUserDefaults().stringForKey("UUID")) == nil) {
             NSUserDefaults.standardUserDefaults().setValue(NSUUID().UUIDString, forKey: "UUID")

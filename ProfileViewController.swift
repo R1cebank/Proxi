@@ -33,7 +33,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate {
         println("ProfileViewController : Modifying")
         println("ProfileViewController : nickname : \(nickname.text)")
         NSUserDefaults.standardUserDefaults().setValue(nickname.text, forKey: "handle")
-        appDelegate.mpcManager.handle = nickname.text
+        appDelegate.mpcManager.newHandle(nickname.text)
     }
     @IBAction func buttonTouched(sender: AnyObject) {
         var tip = AMPopTip()

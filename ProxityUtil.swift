@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func getInitial(name: String) -> String {
     var nameArr = split(name) { $0 == " "}

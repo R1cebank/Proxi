@@ -15,23 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="iAX-2v-LF1">
-                    <rect key="frame" x="190" y="86" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="100" id="0vg-Ub-bJ2"/>
-                        <constraint firstAttribute="height" constant="100" id="lNe-f6-0xD"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proxity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of0-cz-jP3">
                     <rect key="frame" x="198" y="328" width="85" height="25"/>
                     <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="iAX-2v-LF1">
+                    <rect key="frame" x="190" y="127" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="0vg-Ub-bJ2"/>
+                        <constraint firstAttribute="height" constant="100" id="lNe-f6-0xD"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.96862745098039216" green="0.60392156862745094" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="iAX-2v-LF1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="86" id="IbK-8U-aEd"/>
+                <constraint firstItem="iAX-2v-LF1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="127" id="IbK-8U-aEd"/>
                 <constraint firstAttribute="centerY" secondItem="Of0-cz-jP3" secondAttribute="centerY" constant="-100.5" id="Tqw-gs-eIS"/>
                 <constraint firstAttribute="centerX" secondItem="Of0-cz-jP3" secondAttribute="centerX" id="nYi-rF-2Ql"/>
                 <constraint firstAttribute="centerX" secondItem="iAX-2v-LF1" secondAttribute="centerX" id="uIX-eD-Tm3"/>

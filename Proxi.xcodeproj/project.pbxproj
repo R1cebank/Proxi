@@ -12,6 +12,9 @@
 		7B08FB871AE7331000ABC45B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB861AE7331000ABC45B /* MessageViewController.swift */; };
 		7B08FB891AE7444E00ABC45B /* ChatNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB881AE7444E00ABC45B /* ChatNavController.swift */; };
 		7B08FB8B1AE7634A00ABC45B /* MessageContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08FB8A1AE7634A00ABC45B /* MessageContainerController.swift */; };
+		7B0ADC2C1AFDC88700155D90 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0ADC2B1AFDC88700155D90 /* Walkthrough.storyboard */; };
+		7B0ADC301AFDCE1A00155D90 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0ADC2E1AFDCE1A00155D90 /* BWWalkthroughPageViewController.swift */; };
+		7B0ADC311AFDCE1A00155D90 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0ADC2F1AFDCE1A00155D90 /* BWWalkthroughViewController.swift */; };
 		7B28DE6E1AFC4D4C002C62A4 /* ProxityUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B28DE6D1AFC4D4C002C62A4 /* ProxityUtil.swift */; };
 		7B28DE741AFC90B4002C62A4 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B28DE731AFC90B4002C62A4 /* ModelTests.swift */; };
 		7B3EB4EC1AE8790D004D72D5 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EB4EB1AE8790D004D72D5 /* ChatManager.swift */; };
@@ -20,6 +23,7 @@
 		7B4064DF1AF00F5D00F4AC79 /* ProxiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4064DE1AF00F5D00F4AC79 /* ProxiSession.swift */; };
 		7BA429891AE99568008C6B31 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA429881AE99568008C6B31 /* ProfileViewController.swift */; };
 		7BB4908A1AF1ED43000D6FD0 /* MessageQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB490891AF1ED43000D6FD0 /* MessageQueue.swift */; };
+		7BDE3FA61AFE607B0015F422 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE3FA51AFE607B0015F422 /* IntroViewController.swift */; };
 		7BF998931AE5812100BCC7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998921AE5812100BCC7C1 /* AppDelegate.swift */; };
 		7BF998951AE5812100BCC7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF998941AE5812100BCC7C1 /* ViewController.swift */; };
 		7BF998981AE5812100BCC7C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF998961AE5812100BCC7C1 /* Main.storyboard */; };
@@ -54,6 +58,9 @@
 		7B08FB861AE7331000ABC45B /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		7B08FB881AE7444E00ABC45B /* ChatNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatNavController.swift; path = Proxi/ChatNavController.swift; sourceTree = "<group>"; };
 		7B08FB8A1AE7634A00ABC45B /* MessageContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageContainerController.swift; sourceTree = "<group>"; };
+		7B0ADC2B1AFDC88700155D90 /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
+		7B0ADC2E1AFDCE1A00155D90 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		7B0ADC2F1AFDCE1A00155D90 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		7B28DE6D1AFC4D4C002C62A4 /* ProxityUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxityUtil.swift; sourceTree = "<group>"; };
 		7B28DE6F1AFC9032002C62A4 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Pods/../build/Debug-iphoneos/Pods-Proxi/Quick.framework"; sourceTree = "<group>"; };
 		7B28DE721AFC90B4002C62A4 /* ProxiTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProxiTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -64,6 +71,7 @@
 		7B4064DE1AF00F5D00F4AC79 /* ProxiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxiSession.swift; sourceTree = "<group>"; };
 		7BA429881AE99568008C6B31 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7BB490891AF1ED43000D6FD0 /* MessageQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageQueue.swift; sourceTree = SOURCE_ROOT; };
+		7BDE3FA51AFE607B0015F422 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		7BF9988D1AE5812100BCC7C1 /* Proxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF998911AE5812100BCC7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BF998921AE5812100BCC7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +123,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7B0ADC2D1AFDCE1A00155D90 /* BWWalkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				7B0ADC2E1AFDCE1A00155D90 /* BWWalkthroughPageViewController.swift */,
+				7B0ADC2F1AFDCE1A00155D90 /* BWWalkthroughViewController.swift */,
+			);
+			path = BWWalkthrough;
+			sourceTree = "<group>";
+		};
 		7B28DE711AFC9093002C62A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +144,7 @@
 		7BF998841AE5812100BCC7C1 = {
 			isa = PBXGroup;
 			children = (
+				7B0ADC2D1AFDCE1A00155D90 /* BWWalkthrough */,
 				7B28DE711AFC9093002C62A4 /* Tests */,
 				7BF998B41AE5D98600BCC7C1 /* View Controllers */,
 				7BF998B31AE581E800BCC7C1 /* Misc */,
@@ -170,6 +188,7 @@
 		7BF998B31AE581E800BCC7C1 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				7B0ADC2B1AFDC88700155D90 /* Walkthrough.storyboard */,
 				7B28DE6D1AFC4D4C002C62A4 /* ProxityUtil.swift */,
 				7BF998B91AE5E2A700BCC7C1 /* Code Pro LC.otf */,
 				7BF998BA1AE5E2A700BCC7C1 /* Proxima Nova Regular.otf */,
@@ -193,6 +212,7 @@
 				7B08FB861AE7331000ABC45B /* MessageViewController.swift */,
 				7BF998B51AE5D9A700BCC7C1 /* SettingViewController.swift */,
 				7BA429881AE99568008C6B31 /* ProfileViewController.swift */,
+				7BDE3FA51AFE607B0015F422 /* IntroViewController.swift */,
 				7BF998BD1AE5F3A400BCC7C1 /* ChatViewController.swift */,
 				7B08FB8A1AE7634A00ABC45B /* MessageContainerController.swift */,
 				7BF998C11AE5F87D00BCC7C1 /* SearchViewController.swift */,
@@ -305,6 +325,7 @@
 				7BF998981AE5812100BCC7C1 /* Main.storyboard in Resources */,
 				7BF998BB1AE5E2A700BCC7C1 /* Code Pro LC.otf in Resources */,
 				7BF9989D1AE5812100BCC7C1 /* LaunchScreen.xib in Resources */,
+				7B0ADC2C1AFDC88700155D90 /* Walkthrough.storyboard in Resources */,
 				7BF998BC1AE5E2A700BCC7C1 /* Proxima Nova Regular.otf in Resources */,
 				7BF9989A1AE5812100BCC7C1 /* Images.xcassets in Resources */,
 			);
@@ -425,9 +446,12 @@
 				7BF998C21AE5F87D00BCC7C1 /* SearchViewController.swift in Sources */,
 				7B08FB891AE7444E00ABC45B /* ChatNavController.swift in Sources */,
 				7BB4908A1AF1ED43000D6FD0 /* MessageQueue.swift in Sources */,
+				7B0ADC301AFDCE1A00155D90 /* BWWalkthroughPageViewController.swift in Sources */,
+				7BDE3FA61AFE607B0015F422 /* IntroViewController.swift in Sources */,
 				7BF998931AE5812100BCC7C1 /* AppDelegate.swift in Sources */,
 				7B4064DF1AF00F5D00F4AC79 /* ProxiSession.swift in Sources */,
 				7B3EB4F01AE88779004D72D5 /* ChatMessage.swift in Sources */,
+				7B0ADC311AFDCE1A00155D90 /* BWWalkthroughViewController.swift in Sources */,
 				7B3EB4EE1AE88343004D72D5 /* ChatClient.swift in Sources */,
 				7BF998B81AE5DC3500BCC7C1 /* MPCManager.swift in Sources */,
 				7BF998BE1AE5F3A400BCC7C1 /* ChatViewController.swift in Sources */,

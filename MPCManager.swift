@@ -78,6 +78,23 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: "proxi-mpc-srv")
         advertiser.delegate = self
     }
+    
+    func newHandle(hdl: String) {
+        handle = hdl
+        var signature = NSUserDefaults.standardUserDefaults().stringForKey("UUID")!
+        signature += "$\(handle)"
+        peer = MCPeerID(displayName: signature)
+        browser = MCNearbyServiceBrowser(peer: peer, serviceType: "proxi-mpc-srv")
+        browser.delegate = self
+        
+        advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: "proxi-mpc-srv")
+        advertiser.delegate = self
+        
+        println("MPCManager : newHandle called and new section is created")
+        
+    }
+    
+    
     func getDisplayName(peer: MCPeerID) -> String {
         var data = peer.displayName.componentsSeparatedByString("$")
         return data[0]

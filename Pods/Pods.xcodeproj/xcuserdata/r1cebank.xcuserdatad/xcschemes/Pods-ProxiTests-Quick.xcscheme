@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D77F5073DB4E3B110BBEE6A4"
+               BlueprintIdentifier = "08B440368EB87FE50843BA5E"
                BuildableName = "Quick.framework"
                BlueprintName = "Pods-ProxiTests-Quick"
                ReferencedContainer = "container:Pods.xcodeproj">

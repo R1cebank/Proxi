@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Proxi-EAIntroView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Proxi-EARestrictedScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Proxi-FoldingTabBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,67 +82,77 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>032E617F1816B820C09CDA45</key>
+		<key>08B440368EB87FE50843BA5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1748604F9D3E82F27686A243</key>
+		<key>1C8F872CEC68DF3592F6508E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3CF0B44AE54EF28E1B1D3FD4</key>
+		<key>1F1AFE57E6D0BD3BFDB4F017</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57AE0B2E329188CB270C1E7A</key>
+		<key>205D64830FC31D11363628DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71CF95FCFB117A0CC8FE25FF</key>
+		<key>4205909A56F9AA31EF78CE9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B779F650EC51DC13983FFBE</key>
+		<key>441F813BC57965C3880ED7CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8EFF0A4B5E0157C0424682C3</key>
+		<key>45B2BE5B794DC4DA7A1429F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5B14F9F75F3C17ACFE1A680</key>
+		<key>52F953BB0A53F65CA96837E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADFF304F5D415EF327B0CB95</key>
+		<key>61D6FF2C86EF90432259C378</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAC35B0A8303EC4C523A51E1</key>
+		<key>6E281179BE7A9344C983E765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D77F5073DB4E3B110BBEE6A4</key>
+		<key>951B786CCA88302DFC0D8C71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC2D2F3EBD7681B0345E8120</key>
+		<key>B33FF2EAAB0EB6FBC52CC6C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC4873A8A4C88C693AE75B6E</key>
+		<key>B600558BAB68D85DB2BEB524</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3F495D7716665DFB9FA6202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE9B524D8F5B1744A5C8C283</key>
 		<dict>
 			<key>primary</key>
 			<true/>

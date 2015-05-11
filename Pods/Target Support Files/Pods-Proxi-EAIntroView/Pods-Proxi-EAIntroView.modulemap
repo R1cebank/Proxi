@@ -1,0 +1,6 @@
+framework module EAIntroView {
+  umbrella header "Pods-Proxi-EAIntroView-umbrella.h"
+
+  export *
+  module * { export * }
+}
