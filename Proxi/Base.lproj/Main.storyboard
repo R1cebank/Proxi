@@ -231,14 +231,14 @@
                                     <action selector="setVisibleChanged:" destination="QTM-sz-MWG" eventType="valueChanged" id="cqV-ia-eHp"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Visible to others?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sko-cL-ryq">
-                                <rect key="frame" x="16" y="111" width="131" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visible to others?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sko-cL-ryq">
+                                <rect key="frame" x="16" y="111" width="147" height="17"/>
                                 <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALp-EY-V43" customClass="GBFlatButton">
-                                <rect key="frame" x="98" y="183" width="124" height="30"/>
+                                <rect key="frame" x="98" y="180" width="124" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="MdA-hu-DEJ"/>
@@ -262,9 +262,8 @@
                             <constraint firstAttribute="trailing" secondItem="fX5-pe-edo" secondAttribute="trailing" id="cvx-NO-QAC"/>
                             <constraint firstItem="fX5-pe-edo" firstAttribute="top" secondItem="Rer-T3-Pl4" secondAttribute="bottom" id="fgV-89-KmG"/>
                             <constraint firstItem="O0w-aM-LiX" firstAttribute="trailing" secondItem="xm0-Dn-na1" secondAttribute="trailingMargin" id="jCq-jx-ako"/>
-                            <constraint firstItem="IKd-y4-ptB" firstAttribute="top" secondItem="ALp-EY-V43" secondAttribute="bottom" constant="306" id="jOh-Gf-bM5"/>
                             <constraint firstItem="fX5-pe-edo" firstAttribute="leading" secondItem="xm0-Dn-na1" secondAttribute="leading" id="nFB-k5-13y"/>
-                            <constraint firstItem="ALp-EY-V43" firstAttribute="centerX" secondItem="fX5-pe-edo" secondAttribute="centerX" id="xlS-o8-wUJ"/>
+                            <constraint firstItem="ALp-EY-V43" firstAttribute="top" secondItem="sko-cL-ryq" secondAttribute="bottom" constant="52" id="wDz-UL-OdI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 4" id="AAE-LP-vDe"/>
