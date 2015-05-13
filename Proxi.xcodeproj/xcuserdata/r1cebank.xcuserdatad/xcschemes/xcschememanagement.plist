@@ -4,21 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Glance - Proxi WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>17</integer>
-		</dict>
-		<key>Notification - Proxi WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
-		</dict>
-		<key>Proxi WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
-		</dict>
 		<key>Proxi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,11 +12,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7B946C141B03D7B20027CB89</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7BF9988C1AE5812100BCC7C1</key>
 		<dict>
 			<key>primary</key>
