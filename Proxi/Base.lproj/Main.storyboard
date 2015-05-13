@@ -258,12 +258,12 @@
                             <constraint firstItem="sko-cL-ryq" firstAttribute="leading" secondItem="xm0-Dn-na1" secondAttribute="leadingMargin" id="89Z-yq-9qr"/>
                             <constraint firstItem="O0w-aM-LiX" firstAttribute="top" secondItem="fX5-pe-edo" secondAttribute="bottom" constant="25" id="91J-UO-NjP"/>
                             <constraint firstItem="sko-cL-ryq" firstAttribute="top" secondItem="fX5-pe-edo" secondAttribute="bottom" constant="31" id="TLD-Vo-L2L"/>
-                            <constraint firstItem="ALp-EY-V43" firstAttribute="leading" secondItem="xm0-Dn-na1" secondAttribute="leadingMargin" constant="82" id="biJ-Q9-f4t"/>
                             <constraint firstAttribute="trailing" secondItem="fX5-pe-edo" secondAttribute="trailing" id="cvx-NO-QAC"/>
                             <constraint firstItem="fX5-pe-edo" firstAttribute="top" secondItem="Rer-T3-Pl4" secondAttribute="bottom" id="fgV-89-KmG"/>
                             <constraint firstItem="O0w-aM-LiX" firstAttribute="trailing" secondItem="xm0-Dn-na1" secondAttribute="trailingMargin" id="jCq-jx-ako"/>
                             <constraint firstItem="fX5-pe-edo" firstAttribute="leading" secondItem="xm0-Dn-na1" secondAttribute="leading" id="nFB-k5-13y"/>
                             <constraint firstItem="ALp-EY-V43" firstAttribute="top" secondItem="sko-cL-ryq" secondAttribute="bottom" constant="52" id="wDz-UL-OdI"/>
+                            <constraint firstAttribute="centerX" secondItem="ALp-EY-V43" secondAttribute="centerX" id="xVq-og-PEK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 4" id="AAE-LP-vDe"/>
