@@ -125,7 +125,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as! AvaliablePeerCell
         //Set left buttons
         var leftButtons = NSMutableArray()
-        leftButtons.sw_addUtilityButtonWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1), icon: UIImage(named: "link"))
+        leftButtons.sw_addUtilityButtonWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1), icon: UIImage(named: "connect"))
         cell.leftUtilityButtons = leftButtons as [AnyObject]
         //Set right buttons
         cell.peerID?.text = appDelegate.mpcManager.getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
