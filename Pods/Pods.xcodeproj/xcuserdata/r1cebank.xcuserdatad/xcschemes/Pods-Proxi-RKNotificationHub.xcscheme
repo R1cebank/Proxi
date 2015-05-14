@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED5015C05AD70F217420C17E"
+               BlueprintIdentifier = "11CECA57128DFB5F2F8D1E9E"
                BuildableName = "RKNotificationHub.framework"
                BlueprintName = "Pods-Proxi-RKNotificationHub"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -66,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
         tabBarController.selectedIndex = 0
         tabBarController.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight
         tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset
-        tabBarController.tabBarView.backgroundColor = UIColor(red: 94/255, green: 91/255, blue: 149/255, alpha: 1)
-        tabBarController.tabBarView.tabBarColor = UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1)
+        tabBarController.tabBarView.backgroundColor = UIColor.whiteColor()
+        tabBarController.tabBarView.tabBarColor = UIColor(red:112/255.0, green:205/255.0, blue:247/255.0, alpha:255/255.0)
         tabBarController.tabBarViewHeight = YALTabBarViewDefaultHeight
         tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets
         tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets

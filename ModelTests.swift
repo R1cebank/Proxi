@@ -10,18 +10,8 @@ import Foundation
 import Quick
 import Nimble
 
-class TableOfContentsSpec: QuickSpec {
+class MessageViewControllerTest: QuickSpec {
     override func spec() {
-        describe("the 'Documentation' directory") {
-            it("has everything you need to get started") {
-                expect(1).to(equal(1))
-            }
-            
-            context("if it doesn't have what you're looking for") {
-                it("needs to be updated") {
-                    expect(1).to(equal(0))
-                }
-            }
-        }
+        
     }
 }

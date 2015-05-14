@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import SWTableViewCell
+import MCSwipeTableViewCell
 
-class AvaliablePeerCell : SWTableViewCell {
+class AvaliablePeerCell : MCSwipeTableViewCell {
     @IBOutlet weak var randomName: UILabel!
     //weak var randomName: UILabel!
     @IBOutlet weak var peerID: UILabel!

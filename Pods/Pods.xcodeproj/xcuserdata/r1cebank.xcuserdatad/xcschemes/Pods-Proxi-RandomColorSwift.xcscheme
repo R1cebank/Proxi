@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4B78E09C1A37E9DD31F6D9D1"
+               BlueprintIdentifier = "498E420A631B13F32D039D16"
                BuildableName = "RandomColorSwift.framework"
                BlueprintName = "Pods-Proxi-RandomColorSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
