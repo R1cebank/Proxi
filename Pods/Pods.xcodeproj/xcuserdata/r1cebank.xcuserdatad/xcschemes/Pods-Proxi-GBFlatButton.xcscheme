@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F179C2CC1F3843B370A265BE"
+               BlueprintIdentifier = "0D1A2631825FE1FCD79D5F3C"
                BuildableName = "GBFlatButton.framework"
                BlueprintName = "Pods-Proxi-GBFlatButton"
                ReferencedContainer = "container:Pods.xcodeproj">

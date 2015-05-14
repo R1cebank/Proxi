@@ -8,11 +8,11 @@
 
 import UIKit
 import MultipeerConnectivity
-import MCSwipeTableViewCell
+import SWTableViewCell
 import JDStatusBarNotification
 import SIAlertView
 
-class SearchViewController: UIViewController, UITableViewDelegate, MCSwipeTableViewCellDelegate, UITableViewDataSource, MPCManagerDelegate, BWWalkthroughViewControllerDelegate {
+class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCellDelegate, UITableViewDataSource, MPCManagerDelegate, BWWalkthroughViewControllerDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet weak var visibilityIndicator: UILabel!
@@ -120,48 +120,18 @@ class SearchViewController: UIViewController, UITableViewDelegate, MCSwipeTableV
         appDelegate.messageQueue.saveMsg()
     }
     
-    func  viewWithImageName(imageName: String) -> UIView {
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.Center
-        return imageView
-    }
-    
     //UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as! MCSwipeTableViewCell
-        //cell = MCSwipeTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "idCellPeer")
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.contentView.backgroundColor = UIColor.whiteColor()
-        cell.selectionStyle = UITableViewCellSelectionStyle.Gray
-        
-        //Setup Check
-        let connectView = self.viewWithImageName("link")
-        let greenColor = UIColor(red: 85/255, green: 213/255, blue: 80/255, alpha: 1.0)
-        let crossView = self.viewWithImageName("cross")
-        let redColor = UIColor(red: 232/255, green: 61/255, blue: 14/255, alpha: 1.0)
-        cell.defaultColor = self.tableView.backgroundView?.backgroundColor
-        cell.setSwipeGestureWithView(connectView, color: greenColor, mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) {
-            (cell, state, mode) -> Void in
-            println("connect swiped")
-            let selectedPeer = self.appDelegate.mpcManager.foundPeers[indexPath.row] as MCPeerID
-            let peerName = self.appDelegate.mpcManager.foundPeers[indexPath.row].displayName
-            let alertView = SIAlertView(title: "Invitation Sent", andMessage: "Your invitation to: \(self.appDelegate.mpcManager.getHandle(selectedPeer)) has been sent.") as SIAlertView
-            alertView.addButtonWithTitle("OK", type: SIAlertViewButtonType.Default, handler: nil)
-            alertView.show()
-            
-            self.appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: self.appDelegate.mpcManager.newOrGetSession(peerName).session, withContext: nil, timeout: 20)
-        }
-        cell.setSwipeGestureWithView(crossView, color: redColor, mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State2) {
-            (cell, state, mode) -> Void in
-            println("cancel swiped")
-        }
-        
-        cell.textLabel?.text = appDelegate.mpcManager.getHandleFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
-        cell.detailTextLabel?.text = appDelegate.mpcManager.getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
-        
+        var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as! AvaliablePeerCell
+        //Set left buttons
+        var leftButtons = NSMutableArray()
+        leftButtons.sw_addUtilityButtonWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1), icon: UIImage(named: "connect"))
+        cell.leftUtilityButtons = leftButtons as [AnyObject]
+        //Set right buttons
+        cell.peerID?.text = appDelegate.mpcManager.getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
+        cell.randomName?.text = appDelegate.mpcManager.getHandleFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
         cell.delegate = self
-        
+        //cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -178,7 +148,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, MCSwipeTableV
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.mpcManager.foundPeers.count
     }
-    /*func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerLeftUtilityButtonWithIndex index: Int) {
+    func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerLeftUtilityButtonWithIndex index: Int) {
         let indexPath = self.tableView.indexPathForCell(cell)
         let selectedPeer = appDelegate.mpcManager.foundPeers[indexPath!.row] as MCPeerID
         let peerName = appDelegate.mpcManager.foundPeers[indexPath!.row].displayName
@@ -193,9 +163,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, MCSwipeTableV
         default:
             break;
         }
-    }*/
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

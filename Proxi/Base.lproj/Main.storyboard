@@ -91,6 +91,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="avT-a8-fA8">
                                 <rect key="frame" x="0.0" y="80" width="320" height="359"/>
+                                <color key="backgroundColor" red="0.42111405759999998" green="0.4061982931" blue="0.66673954619999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="jwP-Ec-TG7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -98,19 +99,20 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for peers..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaU-C2-GKQ">
                                             <rect key="frame" x="17" y="18" width="184" height="17"/>
                                             <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VISIBLE TO OTHERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1c-FE-fR4">
                                             <rect key="frame" x="17" y="41" width="295" height="11"/>
                                             <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="11"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-uS-fCD">
                                             <rect key="frame" x="270" y="25" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.42111405756665438" green="0.40619829305255911" blue="0.66673954620707065" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="f1c-FE-fR4" secondAttribute="trailing" constant="8" id="8qU-0K-AV4"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="CfU-ZQ-RBS"/>
@@ -122,32 +124,45 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="idCellPeer" textLabel="dvL-oE-8Qd" detailTextLabel="SFi-L3-2TN" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="lxH-Ek-kgx" customClass="MCSwipeTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="idCellPeer" rowHeight="60" id="lxH-Ek-kgx" customClass="AvaliablePeerCell" customModule="Proxi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lxH-Ek-kgx" id="uTX-Fs-PTq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dvL-oE-8Qd">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-Xz-a4r">
+                                                    <rect key="frame" x="16" y="8" width="304" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SFi-L3-2TN">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-qG-qqP">
+                                                    <rect key="frame" x="16" y="40" width="304" height="12"/>
+                                                    <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.40000000000000002" green="0.38823529410000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="top" secondItem="uTX-Fs-PTq" secondAttribute="topMargin" id="0GE-tX-CZ5"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" constant="8" id="33T-lr-LoK"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" constant="8" id="VYq-bz-sQW"/>
+                                                <constraint firstItem="xRb-qG-qqP" firstAttribute="bottom" secondItem="uTX-Fs-PTq" secondAttribute="bottomMargin" id="itR-1a-RtQ"/>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="trailing" secondItem="uTX-Fs-PTq" secondAttribute="trailingMargin" constant="8" id="m3K-0P-dHM"/>
+                                                <constraint firstItem="DOD-Xz-a4r" firstAttribute="leading" secondItem="uTX-Fs-PTq" secondAttribute="leadingMargin" constant="8" id="xcH-y9-cPa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="peerID" destination="xRb-qG-qqP" id="oEA-NB-rml"/>
+                                            <outlet property="randomName" destination="DOD-Xz-a4r" id="Fip-l3-svb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="o0I-Yc-xd0" secondAttribute="trailing" id="9E0-Bz-OEx"/>
                             <constraint firstItem="avT-a8-fA8" firstAttribute="leading" secondItem="BlQ-7m-b4a" secondAttribute="leading" id="EKf-LP-XIg"/>
