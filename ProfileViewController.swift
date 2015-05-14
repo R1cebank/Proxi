@@ -16,6 +16,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var nickname: UITextField!
+    @IBOutlet weak var peerID: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class ProfileViewController : UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(animated: Bool) {
         nickname.text = NSUserDefaults.standardUserDefaults().stringForKey("handle")
+        peerID.text = NSUserDefaults.standardUserDefaults().stringForKey("UUID")
     }
     
     override func didReceiveMemoryWarning() {
