@@ -112,9 +112,13 @@
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-uS-fCD">
                                             <rect key="frame" x="270" y="25" width="20" height="20"/>
                                         </activityIndicatorView>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-ft-qRh" customClass="AIFlatSwitch" customModule="AIFlatSwitch">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-ft-qRh" customClass="AIFlatSwitch" customModule="AIFlatSwitch">
                                             <rect key="frame" x="270" y="59" width="20" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="bww-xa-pbm"/>
+                                                <constraint firstAttribute="height" constant="20" id="miU-SA-60j"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                                     <color key="value" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,12 +147,14 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.42111405756665438" green="0.40619829305255911" blue="0.66673954620707065" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lEH-ft-qRh" secondAttribute="trailing" constant="30" id="2fn-JW-VSd"/>
                                         <constraint firstAttribute="trailing" secondItem="f1c-FE-fR4" secondAttribute="trailing" constant="8" id="8qU-0K-AV4"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="CfU-ZQ-RBS"/>
                                         <constraint firstItem="vaU-C2-GKQ" firstAttribute="top" secondItem="jwP-Ec-TG7" secondAttribute="top" constant="18" id="L1s-6C-m1q"/>
                                         <constraint firstAttribute="trailing" secondItem="r8G-uS-fCD" secondAttribute="trailing" constant="30" id="MLy-5f-sV1"/>
                                         <constraint firstItem="qcu-VB-yMb" firstAttribute="top" secondItem="f1c-FE-fR4" secondAttribute="bottom" constant="11" id="MqI-Vp-5gA"/>
                                         <constraint firstItem="vaU-C2-GKQ" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="OxL-7l-9Pq"/>
+                                        <constraint firstItem="lEH-ft-qRh" firstAttribute="top" secondItem="f1c-FE-fR4" secondAttribute="bottom" constant="7" id="haV-7O-yQm"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="r8G-uS-fCD" secondAttribute="bottom" constant="-4" id="ivr-PQ-NH3"/>
                                         <constraint firstItem="qcu-VB-yMb" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="p4P-Py-xo9"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="vaU-C2-GKQ" secondAttribute="bottom" constant="6" id="sz4-zw-fO2"/>
