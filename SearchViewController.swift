@@ -130,8 +130,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         leftButtons.sw_addUtilityButtonWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1), icon: UIImage(named: "link"))
         cell.leftUtilityButtons = leftButtons as [AnyObject]
         //Set right buttons
+        var connectedFlag = ""
+        if(appDelegate.chatManager.messageArchive[appDelegate.mpcManager.sessions.keys.array[indexPath.row]] != nil) {
+            connectedFlag = "  (connected)"
+        }
         cell.peerID?.text = getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
-        cell.randomName?.text = getHandleFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
+        cell.randomName?.text = getHandleFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName) + connectedFlag
         cell.delegate = self
         //cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell

@@ -125,6 +125,7 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="trailStrokeColor">
                                                     <color key="value" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="switchChanged:" destination="Vrl-y1-hA8" eventType="valueChanged" id="h9k-hV-PxC"/>
