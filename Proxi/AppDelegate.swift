@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChatManagerDelegate {
             chatManager.saveMsg()
         }
         dispatch_async(dispatch_get_main_queue(), {
-            JDStatusBarNotification.showWithStatus("message from \(mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
+            JDStatusBarNotification.showWithStatus("message from \(getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
         })
     }
 

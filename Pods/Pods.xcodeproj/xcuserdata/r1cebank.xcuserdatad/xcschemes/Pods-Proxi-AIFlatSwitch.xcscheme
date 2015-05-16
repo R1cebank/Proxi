@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F17D1B4A6CB35BE07BF6D46"
-               BuildableName = "Pods_Proxi.framework"
-               BlueprintName = "Pods-Proxi"
+               BlueprintIdentifier = "5D6EC304549D07C77528E504"
+               BuildableName = "AIFlatSwitch.framework"
+               BlueprintName = "Pods-Proxi-AIFlatSwitch"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

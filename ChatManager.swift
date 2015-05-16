@@ -71,15 +71,18 @@ class ChatManager: NSObject {
         return count
     }
     func newOrGetArchive(clientID: String) -> NSMutableArray {
-        var archive = NSMutableArray()
-        if let a = messageArchive[clientID] {
-            println("Restoring archive with: \(clientID)")
-            archive = a
-        } else {
-            println("Creating a new archive with: \(clientID)")
-            messageArchive[clientID] = archive
+        for (key, value) in messageArchive {
+            if(getDisplayNameFromID(key) == getDisplayNameFromID(clientID)) {
+                println("Restoring archive with: \(clientID)")
+                let archive = messageArchive[key]!
+                messageArchive.removeValueForKey(key)
+                messageArchive[clientID] = archive
+                return messageArchive[clientID]!
+            }
         }
-        return archive
+        println("Creating a new archive with: \(clientID)")
+        messageArchive[clientID] = NSMutableArray()
+        return messageArchive[clientID]!
     }
     //Handle inner application notifications
     func handleMPCReceivedDataWithNotification(notification: NSNotification) {

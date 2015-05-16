@@ -47,8 +47,8 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
         var messageList = appDelegate.chatManager.newOrGetArchive(appDelegate.mpcManager.currentPeerID)
         for message in messageList{
             let message = message as! ChatMessage
-            println("MesssageViewController : restoring \(message.message!) from: \(appDelegate.mpcManager.getDisplayNameFromID(message.sender)) name: \(appDelegate.mpcManager.getHandleFromID(message.sender))")
-            var msg = JSQMessage(senderId: message.sender, displayName: appDelegate.mpcManager.getDisplayNameFromID(message.sender), text: message.message)
+            println("MesssageViewController : restoring \(message.message!) from: \(getDisplayNameFromID(message.sender)) name: \(getHandleFromID(message.sender))")
+            var msg = JSQMessage(senderId: message.sender, displayName: getDisplayNameFromID(message.sender), text: message.message)
             messages += [msg]
         }
         appDelegate.chatManager.unreadFrom[appDelegate.mpcManager.currentPeerID] = -1
@@ -87,7 +87,7 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
             archive.addObject(chatMessage)
             appDelegate.chatManager.saveMsg()
             if(fromPeer.displayName == appDelegate.mpcManager.currentPeerID) {
-                var msg = JSQMessage(senderId: appDelegate.mpcManager.getDisplayName(fromPeer), displayName: appDelegate.mpcManager.getHandle(fromPeer), text: message)
+                var msg = JSQMessage(senderId: getDisplayName(fromPeer), displayName: getHandle(fromPeer), text: message)
                 messages += [msg]
                 dispatch_async(dispatch_get_main_queue(), {self.finishReceivingMessageAnimated(true)})
             } else {
@@ -98,7 +98,7 @@ class MessageViewController : JSQMessagesViewController, ChatManagerDelegate {
                     appDelegate.chatManager.unreadFrom[fromPeer.displayName] = 1
                 }
                 dispatch_async(dispatch_get_main_queue(), {
-                    JDStatusBarNotification.showWithStatus("message from \(self.appDelegate.mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
+                    JDStatusBarNotification.showWithStatus("message from \(getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
                 })
             }
             println("MessageViewController : added message : \(message) from: \(fromPeer.displayName)")

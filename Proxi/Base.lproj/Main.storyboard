@@ -14,6 +14,7 @@
             <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
             <string>Code-Pro-LC</string>
+            <string>Code-Pro-LC</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -93,7 +94,7 @@
                                 <rect key="frame" x="0.0" y="80" width="320" height="359"/>
                                 <color key="backgroundColor" red="0.42111405759999998" green="0.4061982931" blue="0.66673954619999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="jwP-Ec-TG7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for peers..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaU-C2-GKQ">
@@ -111,6 +112,33 @@
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-uS-fCD">
                                             <rect key="frame" x="270" y="25" width="20" height="20"/>
                                         </activityIndicatorView>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-ft-qRh" customClass="AIFlatSwitch" customModule="AIFlatSwitch">
+                                            <rect key="frame" x="270" y="59" width="20" height="20"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                    <color key="value" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                    <integer key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="trailStrokeColor">
+                                                    <color key="value" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="switchChanged:" destination="Vrl-y1-hA8" eventType="valueChanged" id="h9k-hV-PxC"/>
+                                            </connections>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOW ALL PEERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcu-VB-yMb">
+                                            <rect key="frame" x="17" y="63" width="231" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="231" id="oRR-F2-KMs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Code-Pro-LC" family="Code Pro LC" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.42111405756665438" green="0.40619829305255911" blue="0.66673954620707065" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -118,8 +146,10 @@
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="CfU-ZQ-RBS"/>
                                         <constraint firstItem="vaU-C2-GKQ" firstAttribute="top" secondItem="jwP-Ec-TG7" secondAttribute="top" constant="18" id="L1s-6C-m1q"/>
                                         <constraint firstAttribute="trailing" secondItem="r8G-uS-fCD" secondAttribute="trailing" constant="30" id="MLy-5f-sV1"/>
+                                        <constraint firstItem="qcu-VB-yMb" firstAttribute="top" secondItem="f1c-FE-fR4" secondAttribute="bottom" constant="11" id="MqI-Vp-5gA"/>
                                         <constraint firstItem="vaU-C2-GKQ" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="OxL-7l-9Pq"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="r8G-uS-fCD" secondAttribute="bottom" constant="-4" id="ivr-PQ-NH3"/>
+                                        <constraint firstItem="qcu-VB-yMb" firstAttribute="leading" secondItem="jwP-Ec-TG7" secondAttribute="leading" constant="17" id="p4P-Py-xo9"/>
                                         <constraint firstItem="f1c-FE-fR4" firstAttribute="top" secondItem="vaU-C2-GKQ" secondAttribute="bottom" constant="6" id="sz4-zw-fO2"/>
                                     </constraints>
                                 </view>

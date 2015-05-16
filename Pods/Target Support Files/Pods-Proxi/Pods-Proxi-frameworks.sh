@@ -48,6 +48,7 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'AIFlatSwitch.framework'
   install_framework 'AMPopTip.framework'
   install_framework 'FoldingTabBar.framework'
   install_framework 'GBFlatButton.framework'
@@ -60,6 +61,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'SWTableViewCell.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'AIFlatSwitch.framework'
   install_framework 'AMPopTip.framework'
   install_framework 'FoldingTabBar.framework'
   install_framework 'GBFlatButton.framework'

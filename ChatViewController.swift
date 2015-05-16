@@ -67,7 +67,7 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
         }
         //JDStatusBarNotification.showWithStatus("message from \(appDelegate.mpcManager.idName[fromPeer.displayName])", dismissAfter: NSTimeInterval(2))
         dispatch_async(dispatch_get_main_queue(), {
-            JDStatusBarNotification.showWithStatus("message from \(self.appDelegate.mpcManager.getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
+            JDStatusBarNotification.showWithStatus("message from \(getHandle(fromPeer))", dismissAfter: NSTimeInterval(2))
             self.tableView.reloadData()
         })
     }
@@ -75,8 +75,8 @@ class ChatViewController : UIViewController, UITableViewDelegate, UITableViewDat
         var cell = tableView.dequeueReusableCellWithIdentifier("idChatId") as! ChatListDataCell
         var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
         cell.peerID.text = id
-        cell.peerName.text = appDelegate.mpcManager.getHandleFromID(id)
-        var avatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(getInitial(appDelegate.mpcManager.getHandleFromID(id)), backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
+        cell.peerName.text = getHandleFromID(id)
+        var avatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(getInitial(getHandleFromID(id)), backgroundColor: UIColor.lightGrayColor(), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(14), diameter: 30)
         cell.avatarImage = UIImageView(image: avatar.avatarHighlightedImage)
         //cell.userImage = UIImageView(image: UIImage(named: "mo"))
         //Change to load last message

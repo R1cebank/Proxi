@@ -88,7 +88,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         println("lost peer")
     }
     func invitationWasReceived(fromPeer: String) {
-        let alertView = SIAlertView(title: "Invitation Recieved", andMessage: "\(appDelegate.mpcManager.getHandleFromID(fromPeer)) want to chat with you.")
+        let alertView = SIAlertView(title: "Invitation Recieved", andMessage: "\(getHandleFromID(fromPeer)) want to chat with you.")
         alertView.addButtonWithTitle("Accept", type: SIAlertViewButtonType.Default) {
             (alertView) -> Void in
             println("AcceptedPeer: \(fromPeer)")
@@ -128,8 +128,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         leftButtons.sw_addUtilityButtonWithColor(UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1), icon: UIImage(named: "link"))
         cell.leftUtilityButtons = leftButtons as [AnyObject]
         //Set right buttons
-        cell.peerID?.text = appDelegate.mpcManager.getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
-        cell.randomName?.text = appDelegate.mpcManager.getHandleFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
+        cell.peerID?.text = getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
+        cell.randomName?.text = getHandleFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
         cell.delegate = self
         //cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell
@@ -154,7 +154,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         let peerName = appDelegate.mpcManager.foundPeers[indexPath!.row].displayName
         switch(index) {
         case 0:
-            let alertView = SIAlertView(title: "Invitation Sent", andMessage: "Your invitation to: \(appDelegate.mpcManager.getHandle(selectedPeer)) has been sent.") as SIAlertView
+            let alertView = SIAlertView(title: "Invitation Sent", andMessage: "Your invitation to: \(getHandle(selectedPeer)) has been sent.") as SIAlertView
             alertView.addButtonWithTitle("OK", type: SIAlertViewButtonType.Default, handler: nil)
             alertView.show()
             
@@ -168,5 +168,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    @IBAction func switchChanged(sender: AnyObject) {
+        println("SearchViewController : reloading data")
+        tableView.reloadData()
     }
 }

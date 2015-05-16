@@ -2,6 +2,7 @@
 # platform :ios, '6.0'
 
 target 'Proxi' do
+platform :ios, '8.0'
 use_frameworks!
 pod 'FoldingTabBar', '~> 1.0.0'
 pod 'SIAlertView'
@@ -12,6 +13,7 @@ pod 'JDStatusBarNotification'
 pod 'AMPopTip'
 pod 'RandomColorSwift'
 pod 'GBFlatButton'
+pod 'AIFlatSwitch', '~> 0.0.1'
 
 end
 

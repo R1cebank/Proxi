@@ -77,7 +77,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         peer = MCPeerID(displayName: signature)
         
         isVisible = true
-        
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isVisible")
         
         browser = MCNearbyServiceBrowser(peer: peer, serviceType: "proxi-mpc-srv")
         browser.delegate = self
@@ -101,36 +101,21 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
     }
     
-    
-    func getDisplayName(peer: MCPeerID) -> String {
-        var data = peer.displayName.componentsSeparatedByString("$")
-        return data[0]
-    }
-    func getDisplayNameFromID(peer: String) -> String {
-        var data = peer.componentsSeparatedByString("$")
-        return data[0]
-    }
-    func getHandle(peer: MCPeerID) -> String {
-        var data = peer.displayName.componentsSeparatedByString("$")
-        return data[1]
-    }
-    func getHandleFromID(peer: String) -> String {
-        var data = peer.componentsSeparatedByString("$")
-        return data[1]
-    }
-    
     func newOrGetSession(clientID: String) -> ProxiSession {
-        var session: ProxiSession
-        if let s = sessions[clientID] {
-            println("Restoring session with: \(clientID)")
-            session = s
-        } else {
-            println("Creating a new session with: \(clientID)")
-            sessions[clientID] = ProxiSession(s: MCSession(peer: peer))
-            sessions[clientID]!.session.delegate = self
-            session = sessions[clientID]!
+        for (key, value) in sessions {
+            if(getDisplayNameFromID(key) == getDisplayNameFromID(clientID)) {
+                println("Restoring session with: \(clientID)")
+                //Replace key
+                let session = sessions[key]!
+                sessions.removeValueForKey(key)
+                sessions[clientID] = session
+                return sessions[clientID]!
+            }
         }
-        return session
+        println("Creating a new session with: \(clientID)")
+        sessions[clientID] = ProxiSession(s: MCSession(peer: peer))
+        sessions[clientID]!.session.delegate = self
+        return sessions[clientID]!
     }
     
     func unarchiveSavedItems() {
@@ -157,6 +142,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
         foundPeers.append(peerID)
+        if(peer.displayName == peerID.displayName) {
+            println("I am not connecting myself :D")
+            return
+        }
         if(sessions[peerID.displayName] != nil) {
             println("Recent peer is range, trying to reconnect (\(peerID.displayName))...")
             browser.invitePeer(peerID, toSession: newOrGetSession(peerID.displayName).session, withContext: nil, timeout: 20)
@@ -187,7 +176,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
         self.invitationHandler = invitationHandler
-        if(sessions[peerID.displayName] != nil) {
+        if(ifExistSession(peerID.displayName)) {
             self.invitationHandler(true, self.newOrGetSession(peerID.displayName).session)
         } else {
             delegate?.invitationWasReceived(peerID.displayName)
@@ -203,7 +192,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     // MARK: MCSessionDelegate method implementation
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
-        if(self.peer.displayName != peer.displayName) {
+        if(getDisplayNameFromID(self.peer.displayName) != getDisplayNameFromID(peer.displayName)) {
             newOrGetSession(peer.displayName).state = state
         }
         println("Changing session table state to: \(state.rawValue)")
@@ -226,6 +215,16 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             })
         }
         NSKeyedArchiver.archiveRootObject(sessions.keys.array, toFile: sessionArchivePath)
+    }
+    
+    func ifExistSession(peerID: String) -> Bool {
+        let keys = sessions.keys.array
+        for key in keys {
+            if(getDisplayNameFromID(peerID) == getDisplayNameFromID(key)) {
+                return true
+            }
+        }
+        return false
     }
     
     

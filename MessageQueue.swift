@@ -27,15 +27,18 @@ class MessageQueue : NSObject {
         queue.removeAllObjects()
     }
     func newOrGetForPeer(peer: String) -> NSMutableArray {
-        var archive = NSMutableArray()
-        if let a = messages[peer] {
-            println("Restoring queue with: \(peer)")
-            archive = a
-        } else {
-            println("Creating a new queue with: \(peer)")
-            messages[peer] = archive
+        for (key, value) in messages {
+            if(getDisplayNameFromID(key) == getDisplayNameFromID(peer)) {
+                println("Restoring queue with: \(peer)")
+                let message = messages[key]!
+                messages.removeValueForKey(key)
+                messages[peer] = message
+                return messages[peer]!
+            }
         }
-        return archive
+        println("Creating a new queue with: \(peer)")
+        messages[peer] = NSMutableArray()
+        return messages[peer]!
     }
     func isInQueue(peer: String, message: ChatMessage) -> Bool {
         var array = newOrGetForPeer(peer)

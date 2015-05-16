@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MultipeerConnectivity
 import UIKit
 
 func getInitial(name: String) -> String {
@@ -27,4 +28,22 @@ func randomColor() -> UIColor{
     var randomBlue:CGFloat = CGFloat(drand48())
     return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     
+}
+
+
+func getDisplayName(peer: MCPeerID) -> String {
+    var data = peer.displayName.componentsSeparatedByString("$")
+    return data[0]
+}
+func getDisplayNameFromID(peer: String) -> String {
+    var data = peer.componentsSeparatedByString("$")
+    return data[0]
+}
+func getHandle(peer: MCPeerID) -> String {
+    var data = peer.displayName.componentsSeparatedByString("$")
+    return data[1]
+}
+func getHandleFromID(peer: String) -> String {
+    var data = peer.componentsSeparatedByString("$")
+    return data[1]
 }

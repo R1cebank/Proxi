@@ -1,4 +1,5 @@
 PODS:
+  - AIFlatSwitch (0.0.2)
   - AMPopTip (0.7.1)
   - FoldingTabBar (1.0.0)
   - GBFlatButton (2.1.0)
@@ -14,6 +15,7 @@ PODS:
   - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
+  - AIFlatSwitch (~> 0.0.1)
   - AMPopTip
   - FoldingTabBar (~> 1.0.0)
   - GBFlatButton
@@ -27,6 +29,7 @@ DEPENDENCIES:
   - SWTableViewCell (~> 0.3.7)
 
 SPEC CHECKSUMS:
+  AIFlatSwitch: 0a4fcc19d46bcc510c9da23ab46e4636442290ce
   AMPopTip: 5a78abc067fe3e2fb5d3980072ffae51c8c4f6c5
   FoldingTabBar: 463d247453a2ba826ae79f5be1e6b8b93b6aa0ce
   GBFlatButton: cb6066c6d92a7d031f089d62408ce3c259bb8131
