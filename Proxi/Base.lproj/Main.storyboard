@@ -207,6 +207,7 @@
                     <connections>
                         <outlet property="searchIndicator" destination="r8G-uS-fCD" id="lGb-1q-QTF"/>
                         <outlet property="searchLabel" destination="vaU-C2-GKQ" id="EIM-RH-oO5"/>
+                        <outlet property="showAllSwitch" destination="lEH-ft-qRh" id="ZR8-GP-xJd"/>
                         <outlet property="tableView" destination="avT-a8-fA8" id="wYc-Je-8mY"/>
                         <outlet property="visibilityIndicator" destination="f1c-FE-fR4" id="cG3-89-tNX"/>
                     </connections>

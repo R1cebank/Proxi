@@ -11,6 +11,7 @@ import MultipeerConnectivity
 import SWTableViewCell
 import JDStatusBarNotification
 import SIAlertView
+import AIFlatSwitch
 
 class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCellDelegate, UITableViewDataSource, MPCManagerDelegate, BWWalkthroughViewControllerDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -20,6 +21,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
     @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var searchIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var showAllSwitch: AIFlatSwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -139,7 +141,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
             return 60
         }
         var id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
-        if(appDelegate.chatManager.messageArchive[id] != nil) {
+        if(appDelegate.chatManager.messageArchive[id] != nil && showAllSwitch.selected == false) {
             return 0
         } else {
             return 60
