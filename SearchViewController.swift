@@ -131,7 +131,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, SWTableViewCe
         cell.leftUtilityButtons = leftButtons as [AnyObject]
         //Set right buttons
         var connectedFlag = ""
-        if(appDelegate.chatManager.messageArchive[appDelegate.mpcManager.sessions.keys.array[indexPath.row]] != nil) {
+        var id = ""
+        if(appDelegate.mpcManager.sessions.keys.array.count <= indexPath.row) {
+            id = NSUUID().UUIDString
+        } else {
+            id = appDelegate.mpcManager.sessions.keys.array[indexPath.row]
+        }
+        if(appDelegate.chatManager.messageArchive[id] != nil) {
             connectedFlag = "  (connected)"
         }
         cell.peerID?.text = getDisplayNameFromID(appDelegate.mpcManager.foundPeers[indexPath.row].displayName)
